@@ -1,9 +1,11 @@
 
 const Navbar = () => {
   return (
-    <div>
+    <>
+    <div className="bg-green">
       
     </div>
+    </>
   )
 }
 
