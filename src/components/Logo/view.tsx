@@ -1,9 +1,8 @@
-const Logo = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+import { Link } from "react-router-dom";
+import { APP_ROUTES } from "../../router";
 
-export default Logo
+const Logo = () => {
+  return <Link to={APP_ROUTES.HOME}></Link>;
+};
+
+export default Logo;
