@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
+}
+
+.wrapper {
+  max-width: 1270px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 15px;
+}
