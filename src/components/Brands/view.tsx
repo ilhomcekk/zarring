@@ -14,11 +14,7 @@ const Brands = ({ className }: Props) => {
       <Swiper
         spaceBetween={15}
         slidesPerView={10}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
-        pagination={{
-          clickable: true,
-        }}
+        pagination={true}
         className="[&>.swiper-wrapper]:pb-[50px] pt-[30px]"
         modules={[Pagination]}
         loop

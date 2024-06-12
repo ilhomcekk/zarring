@@ -4,7 +4,7 @@ import uzJson from "./src/i18/uz/translation.json";
 import ruJson from "./src/i18/ru/translation.json";
 
 i18n.use(initReactI18next).init({
-  lng: localStorage.getItem("wottexLanguage") || "ru",
+  lng: localStorage.getItem("zarringLanguage") || "ru",
   fallbackLng: "ru",
   resources: {
     uz: {

@@ -5,12 +5,12 @@ import "./footer.scss";
 const Footer = () => {
   return (
     <div
-      className="bg-no-repeat bg-cover py-[66px]"
+      className="bg-no-repeat bg-cover py-[66px] mt-[50px]"
       style={{ backgroundImage: `url(${ASSETS.footerBg})` }}
     >
       <div className="wrapper">
         <div className="footer-wrapper p-[5px]">
-          <div className="bg-green p-[30px] grid grid-cols-3 gap-4">
+          <div className="bg-footer p-[30px] grid grid-cols-3 gap-4">
             <div className="flex flex-col gap-6 py-6">
               <a
                 href=""
@@ -46,13 +46,52 @@ const Footer = () => {
                 Telegram
               </a>
             </div>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-2">
               <Link to={""} className="footer-link">
                 <img src={ASSETS.arrowWhite} alt="" />
                 Оплата и доставка
               </Link>
+              <Link to={""} className="footer-link">
+                <img src={ASSETS.arrowWhite} alt="" />
+                Акции и промокоды
+              </Link>
+              <Link to={""} className="footer-link">
+                <img src={ASSETS.arrowWhite} alt="" />
+                Новости и статьи
+              </Link>
+              <Link to={""} className="footer-link">
+                <img src={ASSETS.arrowWhite} alt="" />
+                Вопрос-ответ
+              </Link>
+              <Link to={""} className="footer-link">
+                <img src={ASSETS.arrowWhite} alt="" />О нас
+              </Link>
+              <Link to={""} className="footer-link">
+                <img src={ASSETS.arrowWhite} alt="" />
+                Соглашение конфиденциальности
+              </Link>
+              <Link to={""} className="footer-link">
+                <img src={ASSETS.arrowWhite} alt="" />
+                Карта сайта
+              </Link>
+              <Link to={""} className="footer-link">
+                <img src={ASSETS.arrowWhite} alt="" />
+                Контакты
+              </Link>
             </div>
-            <div></div>
+            <div className="flex flex-col">
+              <div className="footer-link">Телефон/телеграм:</div>
+              <div className="text-[21px] text-white">+998 88 144-05-44</div>
+              <div className="mt-auto text-white font-[700]">
+                Доставка по городу Ташкент производится в течение 2 часов с
+                момента подтверждения заказа покупателем. Доставка по регионам
+                производится в течение 2 дней.
+              </div>
+              <div className="footer-link mt-6">
+                Пункт самовывоза: ул. Амира Темура 42, Ташкент График работы:
+                Понедельник-Суббота с 9:00 до 19:00
+              </div>
+            </div>
           </div>
         </div>
       </div>

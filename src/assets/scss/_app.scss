@@ -19,5 +19,23 @@
 }
 
 .swiper-pagination-bullet-active {
-  background: #EF5042;
+  background: #ef5042;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  border-radius: 12px;
+  background: #3b9271;
+  font-size: 16px;
+  font-weight: 600;
+  height: 56px;
+  padding-inline: 12px;
+  transition: 0.2s linear;
+  cursor: pointer;
+  &:hover {
+    background: #26644d;
+  }
 }

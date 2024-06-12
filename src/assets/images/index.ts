@@ -11,6 +11,8 @@ import facebook from './facebook.svg'
 import instagram from './instagram.svg'
 import telegram from './telegram.svg'
 import arrowWhite from './arrow-white.svg'
+import logo from './logo.png'
+import info from './info.svg'
 
 export const ASSETS = {
   location,
@@ -25,5 +27,7 @@ export const ASSETS = {
   facebook,
   instagram,
   telegram,
-  arrowWhite
+  arrowWhite,
+  logo,
+  info
 };

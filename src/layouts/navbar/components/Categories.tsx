@@ -6,7 +6,7 @@ import { APP_ROUTES } from "../../../router";
 const Categories = () => {
   return (
     <div className="wrapper">
-      <div className="flex items-center gap-[30px] mb-7">
+      <div className="flex items-center gap-[30px] mb-6">
         <Link
           to={APP_ROUTES.HOME}
           className="flex items-center gap-2 font-[600] text-[12.8px]"

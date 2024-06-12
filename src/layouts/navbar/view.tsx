@@ -1,5 +1,5 @@
 import { ASSETS } from "../../assets/images";
-import { LanguageSwitcher } from "../../components";
+import { LanguageSwitcher, Logo } from "../../components";
 import { Search } from "./components";
 import Categories from "./components/Categories";
 
@@ -23,6 +23,7 @@ const Navbar = () => {
       <div className="py-5 sticky top-0 bg-white z-[99]">
         <div className="wrapper">
           <div className="flex items-center">
+            <Logo className="mr-8" />
             <Search />
             <div className="ml-auto flex items-center">
               <div className="flex items-center gap-3 hover:bg-light h-[40px] px-4 text-[14px] font-[500] rounded-[4px] text-gray cursor-pointer">
