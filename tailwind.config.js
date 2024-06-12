@@ -10,8 +10,10 @@ export default {
         gray: "#606060",
         linkGray: "#595B66",
         breadGray: "#8B8E99",
+        border: "#36364033",
         red: "#EF5042",
         black3: "#333333",
+        light: "#F2F4F7",
       },
       boxShadow: {
         card: "0px 4px 4px 0px #00000040",
