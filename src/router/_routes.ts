@@ -1,5 +1,6 @@
 import { APP_ROUTES } from ".";
 import {
+  Basket,
   Detail,
   Home,
   NotFound
@@ -14,6 +15,10 @@ export const _routes = [
   {
     path: APP_ROUTES.PRODUCT_DETAIL,
     element: Detail,
+  },
+  {
+    path: APP_ROUTES.BASKET,
+    element: Basket,
   },
   {
     path: "*",

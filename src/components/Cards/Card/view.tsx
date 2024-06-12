@@ -7,7 +7,7 @@ import "./card.scss";
 const Card = () => {
   return (
     <Link
-      to={""}
+      to={"/product/1"}
       className={`group relative shadow-card hover:shadow-sm duration-200
        rounded-[8px] bg-white`}
     >

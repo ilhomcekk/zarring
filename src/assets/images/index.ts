@@ -4,15 +4,17 @@ import user from "./user.svg";
 import heart from "./heart.svg";
 import basket from "./basket.svg";
 import union from "./union.png";
-import ring from './ring.png'
-import cartBasket from './cart-basket.svg'
-import footerBg from './footerBg.jpg'
-import facebook from './facebook.svg'
-import instagram from './instagram.svg'
-import telegram from './telegram.svg'
-import arrowWhite from './arrow-white.svg'
-import logo from './logo.png'
-import info from './info.svg'
+import ring from "./ring.png";
+import cartBasket from "./cart-basket.svg";
+import footerBg from "./footerBg.jpg";
+import facebook from "./facebook.svg";
+import instagram from "./instagram.svg";
+import telegram from "./telegram.svg";
+import arrowWhite from "./arrow-white.svg";
+import logo from "./logo.png";
+import info from "./info.svg";
+import minus from "./minus.svg";
+import plus from "./plus.svg";
 
 export const ASSETS = {
   location,
@@ -29,5 +31,7 @@ export const ASSETS = {
   telegram,
   arrowWhite,
   logo,
-  info
+  info,
+  minus,
+  plus,
 };

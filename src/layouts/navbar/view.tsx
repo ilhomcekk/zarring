@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
 import { ASSETS } from "../../assets/images";
 import { LanguageSwitcher, Logo } from "../../components";
 import { Search } from "./components";
 import Categories from "./components/Categories";
+import { APP_ROUTES } from "../../router";
 
 const Navbar = () => {
   return (
@@ -34,10 +36,13 @@ const Navbar = () => {
                 <img src={ASSETS.heart} alt="" />
                 Избранное
               </div>
-              <div className="flex items-center gap-3 hover:bg-light h-[40px] px-4 text-[14px] font-[500] rounded-[4px] text-gray cursor-pointer">
+              <Link
+                to={APP_ROUTES.BASKET}
+                className="flex items-center gap-3 hover:bg-light h-[40px] px-4 text-[14px] font-[500] rounded-[4px] text-gray cursor-pointer"
+              >
                 <img src={ASSETS.basket} alt="" />
                 Корзина
-              </div>
+              </Link>
             </div>
           </div>
         </div>
