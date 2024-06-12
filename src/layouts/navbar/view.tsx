@@ -20,7 +20,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className="py-5 sticky top-0">
+      <div className="py-5 sticky top-0 bg-white z-[99]">
         <div className="wrapper">
           <div className="flex items-center">
             <Search />

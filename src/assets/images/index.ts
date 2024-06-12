@@ -4,6 +4,13 @@ import user from "./user.svg";
 import heart from "./heart.svg";
 import basket from "./basket.svg";
 import union from "./union.png";
+import ring from './ring.png'
+import cartBasket from './cart-basket.svg'
+import footerBg from './footerBg.jpg'
+import facebook from './facebook.svg'
+import instagram from './instagram.svg'
+import telegram from './telegram.svg'
+import arrowWhite from './arrow-white.svg'
 
 export const ASSETS = {
   location,
@@ -12,4 +19,11 @@ export const ASSETS = {
   heart,
   basket,
   union,
+  ring,
+  cartBasket,
+  footerBg,
+  facebook,
+  instagram,
+  telegram,
+  arrowWhite
 };

@@ -6,16 +6,16 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "./banner.scss";
-import { Shimmer } from "react-shimmer";
+// import { Shimmer } from "react-shimmer";
 import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
     <Swiper
       navigation
-      pagination={{
-        clickable: true,
-      }}
+      // pagination={{
+      //   clickable: true,
+      // }}
       className="swiper-arrow rounded-[12px]"
       loop
       autoplay={{
@@ -40,7 +40,25 @@ const Banner = () => {
           className="block md:h-[420px] h-[185px]"
         >
           <LazyLoadImage
-            effect="blur"
+            effect="opacity"
+            src={
+              "https://s3-alpha-sig.figma.com/img/b09f/b5f4/a38001cb51cfd233f36991e12cc278a3?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=oKQh9rooQRk2szD8HxDJK8kAHT3PvjoS-RDT4O5oICDki-EU~ao1lLCASDe50bzSQXyuzra9MvMln2nY6GnDogHD4tr-MhUmAUkEaTEmOsAWzg0SI698LZVt2eugSp9gT~CR~kL7naDUmsG6gn5-0v~RbLdeK5c8aCiN8Opc-Y6~NI5m0A5~-I3mGTrlBPl9An1m275ZXumYxEJKxyQplidHepwnBGJ63jrBNl7SsD1Xe6qu~kG6c7aEGVPrWy7Qj~BZK3iUuDGkPIWtSZXKTpljZ160ydANKrTRMcHEncZwidnMj2yqwvb-5YPMV2iDvoCEF-uSaUsv5ULJb-LUZg__"
+            }
+            alt=""
+            className="h-full object-cover w-full bg-[#eee] md:rounded-[0] rounded-[12px]"
+            wrapperClassName="w-full h-full"
+          />
+        </Link>
+      </SwiperSlide>
+      <SwiperSlide className="cursor-pointer">
+        <Link
+          to=""
+          rel="noopener noreferrer"
+          target="_blank"
+          className="block md:h-[420px] h-[185px]"
+        >
+          <LazyLoadImage
+            effect="opacity"
             src={
               "https://s3-alpha-sig.figma.com/img/b09f/b5f4/a38001cb51cfd233f36991e12cc278a3?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=oKQh9rooQRk2szD8HxDJK8kAHT3PvjoS-RDT4O5oICDki-EU~ao1lLCASDe50bzSQXyuzra9MvMln2nY6GnDogHD4tr-MhUmAUkEaTEmOsAWzg0SI698LZVt2eugSp9gT~CR~kL7naDUmsG6gn5-0v~RbLdeK5c8aCiN8Opc-Y6~NI5m0A5~-I3mGTrlBPl9An1m275ZXumYxEJKxyQplidHepwnBGJ63jrBNl7SsD1Xe6qu~kG6c7aEGVPrWy7Qj~BZK3iUuDGkPIWtSZXKTpljZ160ydANKrTRMcHEncZwidnMj2yqwvb-5YPMV2iDvoCEF-uSaUsv5ULJb-LUZg__"
             }

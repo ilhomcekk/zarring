@@ -1,0 +1,23 @@
+.footer-wrapper {
+  background: linear-gradient(
+    90deg,
+    #fcd429 0%,
+    #fff9ce 22.27%,
+    #cb9b22 48.77%,
+    #e6d179 73.77%,
+    #fcd222 100%
+  );
+}
+
+.footer-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  line-height: 22px;
+  color: #fff;
+  img {
+    min-width: 6px;
+    width: 6px;
+  }
+}
