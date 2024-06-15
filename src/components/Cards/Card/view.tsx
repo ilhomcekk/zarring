@@ -16,21 +16,21 @@ const Card = () => {
       </button>
       <LazyLoadImage
         src={ASSETS.ring}
-        wrapperClassName="group/image h-[315px] w-full overflow-hidden"
+        wrapperClassName="group/image md:h-[280px] h-[130px] w-full overflow-hidden"
         className="group-hover/image:scale-[1.05] w-full h-full object-contain duration-200"
         effect="opacity"
         alt=""
       />
       <div className="p-[12px]">
-        <div className="text-[19px] text-[#1F2026] border-b border-[#EEEEEE] pb-1 leading-none">
+        <div className="md:text-[19px] text-[14px] text-[#1F2026] border-b border-[#EEEEEE] pb-1 leading-none">
           Золотое кольцо с алмазом
         </div>
-        <div className="text-txtGray text-[11px] leading-none mt-1 h-[33px]">
+        <div className="line-clamp-3 text-txtGray text-[11px] leading-none mt-1 h-[33px]">
           lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
           ipsum lorem ipsum lorem ipsum lorem ipsum{" "}
         </div>
         <div className="flex items-center justify-between mt-4">
-          <div className="text-[33px] font-[500]">35$</div>
+          <div className="md:text-[33px] text-[24px] font-[500]">35$</div>
           <div className="cart-basket">
             <img src={ASSETS.cartBasket} alt="" />
           </div>

@@ -5,12 +5,12 @@ import "./footer.scss";
 const Footer = () => {
   return (
     <div
-      className="bg-no-repeat bg-cover py-[66px] mt-[50px]"
+      className="bg-no-repeat bg-cover py-[40px] mt-[50px]"
       style={{ backgroundImage: `url(${ASSETS.footerBg})` }}
     >
       <div className="wrapper">
         <div className="footer-wrapper p-[5px]">
-          <div className="bg-footer p-[30px] grid grid-cols-3 gap-4">
+          <div className="bg-footer px-[30px] py-[20px] grid md:grid-cols-3 gap-4">
             <div className="flex flex-col gap-6 py-6">
               <a
                 href=""
@@ -81,7 +81,7 @@ const Footer = () => {
             </div>
             <div className="flex flex-col">
               <div className="footer-link">Телефон/телеграм:</div>
-              <div className="text-[21px] text-white">+998 88 144-05-44</div>
+              <div className="text-[21px] text-white max-md:my-4">+998 88 144-05-44</div>
               <div className="mt-auto text-white font-[700]">
                 Доставка по городу Ташкент производится в течение 2 часов с
                 момента подтверждения заказа покупателем. Доставка по регионам

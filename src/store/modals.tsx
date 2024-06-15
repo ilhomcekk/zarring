@@ -5,6 +5,8 @@ type StateAction = {
   closeModal: (modalName: string) => void;
   modals?: {
     register?: boolean;
+    catalog?: boolean;
+    menu?: boolean;
   };
 };
 
@@ -13,6 +15,8 @@ const initialState: StateAction = {
   closeModal: () => {},
   modals: {
     register: false,
+    catalog: false,
+    menu: false,
   },
 };
 

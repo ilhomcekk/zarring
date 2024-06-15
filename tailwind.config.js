@@ -14,6 +14,9 @@ export default {
         red: "#EF5042",
         black3: "#333333",
         light: "#F2F4F7",
+        primary: "#3333CC",
+        bgPrimary: "#3131c41a",
+        bgPrimaryHover: "#3131c426",
       },
       boxShadow: {
         card: "0px 4px 4px 0px #00000040",

@@ -18,6 +18,20 @@ const Brands = ({ className }: Props) => {
         className="[&>.swiper-wrapper]:pb-[50px] pt-[30px]"
         modules={[Pagination]}
         loop
+        breakpoints={{
+          1200: {
+            slidesPerView: 10,
+          },
+          1000: {
+            slidesPerView: 8,
+          },
+          767: {
+            slidesPerView: 5,
+          },
+          0: {
+            slidesPerView: 3,
+          },
+        }}
       >
         {[...Array(12)].map((_, idx) => (
           <SwiperSlide key={idx}>

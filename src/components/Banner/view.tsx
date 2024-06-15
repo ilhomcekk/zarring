@@ -18,6 +18,7 @@ const Banner = () => {
       // }}
       className="swiper-arrow rounded-[12px]"
       loop
+      speed={1500}
       autoplay={{
         delay: 2500,
         disableOnInteraction: false,

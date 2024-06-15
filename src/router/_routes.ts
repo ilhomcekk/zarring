@@ -1,10 +1,5 @@
 import { APP_ROUTES } from ".";
-import {
-  Basket,
-  Detail,
-  Home,
-  NotFound
-} from "../views";
+import { Basket, Detail, Favorites, Home, NotFound, Search } from "../views";
 
 export const _routes = [
   {
@@ -19,6 +14,14 @@ export const _routes = [
   {
     path: APP_ROUTES.BASKET,
     element: Basket,
+  },
+  {
+    path: APP_ROUTES.FAVORITES,
+    element: Favorites,
+  },
+  {
+    path: APP_ROUTES.SEARCH,
+    element: Search,
   },
   {
     path: "*",

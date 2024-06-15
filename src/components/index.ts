@@ -7,6 +7,7 @@ import Products from "./Products/view";
 import Brands from "./Brands/view";
 import BreadCrumb from "./BreadCrumb/view";
 import Counter from "./Counter/view";
+import Accordion from "./Accordion/view";
 
 export {
   Logo,
@@ -20,4 +21,5 @@ export {
   BreadCrumb,
   Counter,
   BasketCard,
+  Accordion,
 };

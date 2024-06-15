@@ -4,14 +4,14 @@ const Home = () => {
   return (
     <div className="wrapper">
       <Banner />
-      <Products title="Золотые кольца" className="mt-[50px]" />
-      <Products title="Серебряные кольца" className="mt-[50px]" />
-      <Brands className="mt-[50px]" />
+      <Products title="Золотые кольца" className="md:mt-[50px] mt-[25px]" />
+      <Products title="Серебряные кольца" className="md:mt-[50px] mt-[25px]" />
+      <Brands className="md:mt-[50px] mt-[35px] max-md:mb-4" />
       <Title
         title="Что может предложить Ziynat"
-        className="text-center mt-[50px]"
+        className="text-center md:mt-[50px] mt-[25px] max-md:mb-4"
       />
-      <div className="text-center text-[14px] leading-[22px]">
+      <div className="text-center max-md:text-justify text-[14px] leading-[22px]">
         Ассортимент нашего ювелирного интернет-магазина Ziynat очень большой:
         кольца, серьги, подвески, колье, браслеты, цепи и др. Украшения из
         каталога ювелирного магазина изготовлены из золота, серебра, могут быть
@@ -36,9 +36,9 @@ const Home = () => {
       </div>
       <Title
         title="Преимущества магазина Ziynat.COM.UZ"
-        className="text-center mt-[50px]"
+        className="text-center md:mt-[50px] mt-[25px] max-md:mb-4"
       />
-      <div className="text-center text-[14px] leading-[22px]">
+      <div className="text-center max-md:text-justify text-[14px] leading-[22px]">
         Большой ассортимент изделий. Они отличаются формой, ценой, оттенком,
         металлом, декором (камни, минеральные вещества и др.). Доступные цены.
         Ювелирный магазин напрямую сотрудничает с производителями, поэтому мы
