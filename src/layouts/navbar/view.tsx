@@ -12,7 +12,7 @@ import Categories from "./components/Categories";
 import { APP_ROUTES } from "../../router";
 import { modalsStore } from "../../store";
 import { PhoneOutlined } from "@ant-design/icons";
-import { LuMenu } from "react-icons/lu";
+// import { LuMenu } from "react-icons/lu";
 import "./navbar.scss";
 
 const Navbar = () => {
@@ -45,10 +45,10 @@ const Navbar = () => {
       <div className="md:py-5 py-2 sticky top-0 bg-white z-[99]">
         <div className="wrapper">
           <div className="flex items-center">
-            <LuMenu
+            {/* <LuMenu
               onClick={() => openModal("menu")}
               className="hidden max-lg:block min-w-[20px] w-[20px] h-[20px] mr-4"
-            />
+            /> */}
             <Logo className="mr-8" />
             <button
               onClick={() => {
