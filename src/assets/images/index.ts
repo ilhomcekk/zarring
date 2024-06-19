@@ -11,6 +11,7 @@ import facebook from "./facebook.svg";
 import instagram from "./instagram.svg";
 import telegram from "./telegram.svg";
 import arrowWhite from "./arrow-white.svg";
+import arrowBlack from "./arrow-black.svg";
 import logo from "./logo.png";
 import info from "./info.svg";
 import minus from "./minus.svg";
@@ -30,6 +31,7 @@ export const ASSETS = {
   instagram,
   telegram,
   arrowWhite,
+  arrowBlack,
   logo,
   info,
   minus,

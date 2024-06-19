@@ -32,7 +32,7 @@ const Categories = () => {
         {/* <div className="flex items-center gap-[30px] mb-6"> */}
         <SwiperSlide>
           <Link
-            to={APP_ROUTES.HOME}
+            to={APP_ROUTES.CATEGORY + `/${1}`}
             className="flex items-center gap-2 font-[600] text-[12.8px]"
           >
             <LazyLoadImage
@@ -47,7 +47,7 @@ const Categories = () => {
         </SwiperSlide>
         <SwiperSlide>
           <Link
-            to={APP_ROUTES.HOME}
+            to={APP_ROUTES.CATEGORY + `/${1}`}
             className="anim-text text-[12.8px] text-linkGray hover:text-black"
           >
             <span>Браслеты</span>
@@ -55,7 +55,7 @@ const Categories = () => {
         </SwiperSlide>
         <SwiperSlide>
           <Link
-            to={APP_ROUTES.HOME}
+            to={APP_ROUTES.CATEGORY + `/${1}`}
             className="anim-text text-[12.8px] text-linkGray hover:text-black"
           >
             <span>Тросы</span>
@@ -63,7 +63,7 @@ const Categories = () => {
         </SwiperSlide>
         <SwiperSlide>
           <Link
-            to={APP_ROUTES.HOME}
+            to={APP_ROUTES.CATEGORY + `/${1}`}
             className="anim-text text-[12.8px] text-linkGray hover:text-black"
           >
             <span>Кольцо</span>
@@ -71,7 +71,7 @@ const Categories = () => {
         </SwiperSlide>
         <SwiperSlide>
           <Link
-            to={APP_ROUTES.HOME}
+            to={APP_ROUTES.CATEGORY + `/${1}`}
             className="anim-text text-[12.8px] text-linkGray hover:text-black"
           >
             <span>Алмазы</span>
@@ -79,7 +79,7 @@ const Categories = () => {
         </SwiperSlide>
         <SwiperSlide>
           <Link
-            to={APP_ROUTES.HOME}
+            to={APP_ROUTES.CATEGORY + `/${1}`}
             className="anim-text text-[12.8px] text-linkGray hover:text-black"
           >
             <span>Камень</span>
@@ -87,7 +87,7 @@ const Categories = () => {
         </SwiperSlide>
         <SwiperSlide>
           <Link
-            to={APP_ROUTES.HOME}
+            to={APP_ROUTES.CATEGORY + `/${1}`}
             className="anim-text text-[12.8px] text-linkGray hover:text-black"
           >
             <span>Проба</span>
@@ -95,7 +95,7 @@ const Categories = () => {
         </SwiperSlide>
         <SwiperSlide>
           <Link
-            to={APP_ROUTES.HOME}
+            to={APP_ROUTES.CATEGORY + `/${1}`}
             className="anim-text text-[12.8px] text-linkGray hover:text-black"
           >
             <span>Браслеты</span>
@@ -103,7 +103,7 @@ const Categories = () => {
         </SwiperSlide>
         <SwiperSlide>
           <Link
-            to={APP_ROUTES.HOME}
+            to={APP_ROUTES.CATEGORY + `/${1}`}
             className="anim-text text-[12.8px] text-linkGray hover:text-black"
           >
             <span>Тросы</span>
@@ -111,7 +111,7 @@ const Categories = () => {
         </SwiperSlide>
         <SwiperSlide>
           <Link
-            to={APP_ROUTES.HOME}
+            to={APP_ROUTES.CATEGORY + `/${1}`}
             className="anim-text text-[12.8px] text-linkGray hover:text-black"
           >
             <span>Кольцо</span>
@@ -119,7 +119,7 @@ const Categories = () => {
         </SwiperSlide>
         <SwiperSlide>
           <Link
-            to={APP_ROUTES.HOME}
+            to={APP_ROUTES.CATEGORY + `/${1}`}
             className="anim-text text-[12.8px] text-linkGray hover:text-black"
           >
             <span>Алмазы</span>
@@ -127,7 +127,7 @@ const Categories = () => {
         </SwiperSlide>
         <SwiperSlide>
           <Link
-            to={APP_ROUTES.HOME}
+            to={APP_ROUTES.CATEGORY + `/${1}`}
             className="anim-text text-[12.8px] text-linkGray hover:text-black"
           >
             <span>Камень</span>
@@ -135,7 +135,7 @@ const Categories = () => {
         </SwiperSlide>
         <SwiperSlide>
           <Link
-            to={APP_ROUTES.HOME}
+            to={APP_ROUTES.CATEGORY + `/${1}`}
             className="anim-text text-[12.8px] text-linkGray hover:text-black"
           >
             <span>Проба</span>

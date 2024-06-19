@@ -1,5 +1,5 @@
 import { APP_ROUTES } from ".";
-import { Basket, Detail, Favorites, Home, NotFound, Search } from "../views";
+import { Basket, Detail, Favorites, Home, NotFound, ProductsByCategory, Search } from "../views";
 
 export const _routes = [
   {
@@ -22,6 +22,10 @@ export const _routes = [
   {
     path: APP_ROUTES.SEARCH,
     element: Search,
+  },
+  {
+    path: APP_ROUTES.CATEGORY + '/:id',
+    element: ProductsByCategory,
   },
   {
     path: "*",

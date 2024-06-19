@@ -4,5 +4,6 @@ export const APP_ROUTES = {
   BASKET: "/basket",
   FAVORITES: "/favorites",
   SEARCH: "/search",
+  CATEGORY: "/category",
   NOT_FOUND: "*",
 };

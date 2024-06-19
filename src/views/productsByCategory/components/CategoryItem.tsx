@@ -1,0 +1,33 @@
+import { Link } from "react-router-dom";
+import { ASSETS } from "../../../assets/images";
+
+interface Props {
+  active?: boolean;
+  title?: string;
+  withArrow?: boolean;
+}
+
+const CategoryItem = ({ active, withArrow }: Props) => {
+  return (
+    <div className="inline w-max max-w-full">
+      <Link
+        className={`${
+          active && "bg-[#f4f5f5]"
+        } flex items-center gap-[2px] leading-[1.25] font-500 text-sm text-[#212121] hover:bg-[#f4f5f5] duration-200 rounded-[4px] px-[6px] py-[8px]`}
+        to={""}
+      >
+        {withArrow && (
+          <img
+            src={ASSETS.arrowBlack}
+            className="min-w-[6px] rotate-[180deg] mr-2"
+            alt=""
+          />
+        )}
+        Категория
+        <span className="font-500 text-[#9fa4b5] ml-1">40</span>
+      </Link>
+    </div>
+  );
+};
+
+export default CategoryItem;
