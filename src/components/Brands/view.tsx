@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { BrandCard, Title } from "..";
+import { BrandCard, BrandSkeleton, Title } from "..";
 import { Pagination } from "swiper/modules";
 
 interface Props {
@@ -33,6 +33,11 @@ const Brands = ({ className }: Props) => {
           },
         }}
       >
+        {[...Array(12)].map((_, idx) => (
+          <SwiperSlide key={idx}>
+            <BrandSkeleton />
+          </SwiperSlide>
+        ))}
         {[...Array(12)].map((_, idx) => (
           <SwiperSlide key={idx}>
             <BrandCard />

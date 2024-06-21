@@ -8,6 +8,8 @@ import Brands from "./Brands/view";
 import BreadCrumb from "./BreadCrumb/view";
 import Counter from "./Counter/view";
 import Accordion from "./Accordion/view";
+import ProductSkeleton from "./Skeleton/ProductSkeleton";
+import BrandSkeleton from "./Skeleton/BrandSkeleton";
 
 export {
   Logo,
@@ -22,4 +24,6 @@ export {
   Counter,
   BasketCard,
   Accordion,
+  ProductSkeleton,
+  BrandSkeleton
 };

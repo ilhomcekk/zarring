@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { APP_ROUTES } from "../../../router";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Skeleton } from "antd";
 
 const Categories = () => {
   return (
@@ -12,10 +13,10 @@ const Categories = () => {
         className="mb-6"
         speed={1500}
         spaceBetween={30}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
+        // autoplay={{
+        //   delay: 2500,
+        //   disableOnInteraction: false,
+        // }}
         modules={[Autoplay]}
         breakpoints={{
           1200: {
@@ -29,6 +30,14 @@ const Categories = () => {
           },
         }}
       >
+        {[...Array(12)].map((_, idx) => (
+          <SwiperSlide key={idx}>
+            <Skeleton
+              paragraph={{ rows: 0 }}
+              className="w-full [&>div>h3]:!w-full [&>div]:!flex [&>div]:!items-center"
+            />
+          </SwiperSlide>
+        ))}
         {/* <div className="flex items-center gap-[30px] mb-6"> */}
         <SwiperSlide>
           <Link
