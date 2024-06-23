@@ -1,10 +1,9 @@
 import { create } from "zustand";
 import { requests } from "../helpers/requests";
-import { CategoryType } from "../types";
 
 type StateAction = {
-  getList: (params: any) => Promise<any>;
-  list: CategoryType[];
+  getList: () => Promise<any>;
+  list: { dataValues: { name: string | null; img: string | null } }[];
   listLoading: boolean;
 };
 
@@ -14,12 +13,12 @@ const initialState: StateAction = {
   listLoading: false,
 };
 
-const categoryStore = create<StateAction>((set) => ({
+const bannerStore = create<StateAction>((set) => ({
   ...initialState,
-  getList: async (params) => {
+  getList: async () => {
     set({ listLoading: true });
     try {
-      const { data } = await requests.fetchCategory(params);
+      const { data } = await requests.fetchBanner();
       set({ list: data?.data });
       return data;
     } catch (err) {
@@ -30,4 +29,4 @@ const categoryStore = create<StateAction>((set) => ({
   },
 }));
 
-export default categoryStore;
+export default bannerStore;

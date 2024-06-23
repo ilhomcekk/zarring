@@ -1,5 +1,13 @@
 import { APP_ROUTES } from ".";
-import { Basket, Detail, Favorites, Home, NotFound, ProductsByCategory, Search } from "../views";
+import {
+  Basket,
+  Detail,
+  Favorites,
+  Home,
+  NotFound,
+  ProductsByCategory,
+  Search,
+} from "../views";
 
 export const _routes = [
   {
@@ -20,11 +28,11 @@ export const _routes = [
     element: Favorites,
   },
   {
-    path: APP_ROUTES.SEARCH,
+    path: APP_ROUTES.SEARCH + "/:slug",
     element: Search,
   },
   {
-    path: APP_ROUTES.CATEGORY + '/:id',
+    path: APP_ROUTES.CATEGORY + "/:id",
     element: ProductsByCategory,
   },
   {

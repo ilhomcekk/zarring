@@ -10,6 +10,9 @@ import Counter from "./Counter/view";
 import Accordion from "./Accordion/view";
 import ProductSkeleton from "./Skeleton/ProductSkeleton";
 import BrandSkeleton from "./Skeleton/BrandSkeleton";
+import PageLoading from "./PageLoading/view";
+import NoResults from "./NoResults/view";
+import PhoneInput from "./PhoneInput/PhoneInput";
 
 export {
   Logo,
@@ -25,5 +28,8 @@ export {
   BasketCard,
   Accordion,
   ProductSkeleton,
-  BrandSkeleton
+  BrandSkeleton,
+  PageLoading,
+  NoResults,
+  PhoneInput
 };

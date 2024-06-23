@@ -4,8 +4,9 @@ const Home = () => {
   return (
     <div className="wrapper">
       <Banner />
-      <Products title="Золотые кольца" className="md:mt-[50px] mt-[25px]" />
-      <Products title="Серебряные кольца" className="md:mt-[50px] mt-[25px]" />
+      <Products categoryId="1" className="md:mt-[50px] mt-[25px]" />
+      <Products categoryId="1" className="md:mt-[50px] mt-[25px]" />
+      <Products categoryId="1" className="md:mt-[50px] mt-[25px]" />
       <Brands className="md:mt-[50px] mt-[35px] max-md:mb-4" />
       <Title
         title="Что может предложить Ziynat"

@@ -10,13 +10,16 @@ import {
 } from "./components";
 import Categories from "./components/Categories";
 import { APP_ROUTES } from "../../router";
-import { modalsStore } from "../../store";
+import { modalsStore, productsStore } from "../../store";
 import { PhoneOutlined } from "@ant-design/icons";
 // import { LuMenu } from "react-icons/lu";
 import "./navbar.scss";
 
 const Navbar = () => {
   const { openModal, modals, closeModal } = modalsStore();
+  const { basketCards } = productsStore();
+  console.log("basketCards", basketCards);
+
   return (
     <>
       <div className="bg-footer py-[6px]">
@@ -82,7 +85,7 @@ const Navbar = () => {
                 <img src={ASSETS.basket} alt="" />
                 <span className="max-md:hidden">Корзина</span>
                 <span className="text-[14px] py-[2px] px-[4px] bg-footer text-white rounded-[4px]">
-                  99
+                  {basketCards?.length}
                 </span>
               </Link>
             </div>

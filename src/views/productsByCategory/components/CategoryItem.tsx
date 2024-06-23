@@ -1,20 +1,22 @@
 import { Link } from "react-router-dom";
 import { ASSETS } from "../../../assets/images";
+import { APP_ROUTES } from "../../../router";
 
 interface Props {
   active?: boolean;
-  title?: string;
+  title?: string | null;
+  id?: string | number;
   withArrow?: boolean;
 }
 
-const CategoryItem = ({ active, withArrow }: Props) => {
+const CategoryItem = ({ active, withArrow, title, id }: Props) => {
   return (
     <div className="inline w-max max-w-full">
       <Link
         className={`${
           active && "bg-[#f4f5f5]"
         } flex items-center gap-[2px] leading-[1.25] font-500 text-sm text-[#212121] hover:bg-[#f4f5f5] duration-200 rounded-[4px] px-[6px] py-[8px]`}
-        to={""}
+        to={APP_ROUTES.CATEGORY + `/${id}`}
       >
         {withArrow && (
           <img
@@ -23,8 +25,8 @@ const CategoryItem = ({ active, withArrow }: Props) => {
             alt=""
           />
         )}
-        Категория
-        <span className="font-500 text-[#9fa4b5] ml-1">40</span>
+        {title}
+        {/* <span className="font-500 text-[#9fa4b5] ml-1">40</span> */}
       </Link>
     </div>
   );

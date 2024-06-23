@@ -37,6 +37,17 @@ export const formatPhone = (value?: string) => {
   return value || "";
 };
 
-export const getStaticTextById = (arr: any, id: number) => {
-  return arr?.find((item: any) => item?.id === id);
+export const findCategoryById = (categories: any, id: any) => {
+  for (const category of categories) {
+    if (category.id === id) {
+      return category;
+    }
+    if (category?.subcategories) {
+      const subcategory: any = findCategoryById(category?.subcategories, id);
+      if (subcategory) {
+        return subcategory;
+      }
+    }
+  }
+  return null;
 };

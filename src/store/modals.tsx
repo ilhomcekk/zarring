@@ -7,6 +7,7 @@ type StateAction = {
     register?: boolean;
     catalog?: boolean;
     menu?: boolean;
+    order?: boolean;
   };
 };
 
@@ -17,6 +18,7 @@ const initialState: StateAction = {
     register: false,
     catalog: false,
     menu: false,
+    order: false,
   },
 };
 

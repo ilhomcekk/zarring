@@ -16,6 +16,7 @@ import logo from "./logo.png";
 import info from "./info.svg";
 import minus from "./minus.svg";
 import plus from "./plus.svg";
+import noResultsImage from "./noResult.webp";
 
 export const ASSETS = {
   location,
@@ -36,4 +37,5 @@ export const ASSETS = {
   info,
   minus,
   plus,
+  noResultsImage,
 };

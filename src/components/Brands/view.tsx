@@ -1,12 +1,18 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { BrandCard, BrandSkeleton, Title } from "..";
 import { Pagination } from "swiper/modules";
+import { brandStore } from "../../store";
+import { useEffect } from "react";
 
 interface Props {
   className?: string;
 }
 
 const Brands = ({ className }: Props) => {
+  const { getList, list, listLoading } = brandStore();
+  useEffect(() => {
+    getList();
+  }, []);
   return (
     <div className={`${className}`}>
       <Title title="Бренды" className="text-center mb-4" />
@@ -33,16 +39,17 @@ const Brands = ({ className }: Props) => {
           },
         }}
       >
-        {[...Array(12)].map((_, idx) => (
-          <SwiperSlide key={idx}>
-            <BrandSkeleton />
-          </SwiperSlide>
-        ))}
-        {[...Array(12)].map((_, idx) => (
-          <SwiperSlide key={idx}>
-            <BrandCard />
-          </SwiperSlide>
-        ))}
+        {listLoading
+          ? [...Array(12)].map((_, idx) => (
+              <SwiperSlide key={idx}>
+                <BrandSkeleton />
+              </SwiperSlide>
+            ))
+          : list?.map((item, idx) => (
+              <SwiperSlide key={idx}>
+                <BrandCard card={item} />
+              </SwiperSlide>
+            ))}
       </Swiper>
     </div>
   );

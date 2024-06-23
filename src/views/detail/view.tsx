@@ -1,28 +1,48 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { BreadCrumb, Counter } from "../../components";
+import { BreadCrumb, Counter, PageLoading } from "../../components";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Image } from "antd";
 import { ASSETS } from "../../assets/images";
 import "./detail.scss";
 import { HeartIcon } from "../../utils/icons";
 import { TabsDetail } from "./components";
+import { useParams } from "react-router-dom";
+import { productsStore } from "../../store";
+import { useEffect, useState } from "react";
+import { HeartFilled } from "@ant-design/icons";
 
 const Detail = () => {
+  const { id } = useParams();
+  const [count, setCount] = useState(1);
+  const {
+    getDetail,
+    detail,
+    detailLoading,
+    toggleFavoriteCard,
+    favorites,
+    toggleBasketCard,
+    basketCards,
+  } = productsStore();
+  useEffect(() => {
+    if (id) {
+      getDetail(id);
+    }
+  }, [id]);
   return (
     <>
       <div className="wrapper">
         <BreadCrumb
           items={[
+            // {
+            //   name: "Все категории",
+            //   link: "1",
+            // },
+            // {
+            //   name: "Дача, сад и огород",
+            //   link: "1",
+            // },
             {
-              name: "Все категории",
-              link: "1",
-            },
-            {
-              name: "Дача, сад и огород",
-              link: "1",
-            },
-            {
-              name: "Антимоскитные сетки",
+              name: detail?.title || "",
             },
           ]}
         />
@@ -60,11 +80,23 @@ const Detail = () => {
               <div className="text-breadGray text-[13px]">
                 Более 700 заказов
               </div>
-              <div className="ml-auto flex items-center gap-2 h-[40px] px-3 hover:bg-light rounded-[4px] cursor-pointer">
-                <HeartIcon />В желания
+              <div
+                onClick={() => toggleFavoriteCard(detail)}
+                className="ml-auto flex items-center gap-2 h-[40px] px-3 hover:bg-light rounded-[4px] cursor-pointer"
+              >
+                {favorites?.find((item) => item?.id === detail?.id) ? (
+                  <>
+                    <HeartFilled className="[&>svg]:fill-red [&>svg]:text-[21px]" />
+                    В желание
+                  </>
+                ) : (
+                  <>
+                    <HeartIcon />В желания
+                  </>
+                )}
               </div>
             </div>
-            <div className="text-[22px] mt-4">Серебряное кольцо с алмазом</div>
+            <div className="text-[22px] mt-4">{detail?.title}</div>
             <div className="mt-6 flex items-center gap-2 cursor-pointer">
               Доставка: <img src={ASSETS.info} alt="" />
             </div>
@@ -75,14 +107,36 @@ const Detail = () => {
               <div>Проба:</div>
             </div>
             <div className="mt-6">Количество:</div>
-            <Counter className="mt-2" />
+            <Counter
+              onMinus={() => {
+                if (count > 1) {
+                  setCount((prev) => prev - 1);
+                }
+              }}
+              onPlus={() => {
+                setCount((prev) => prev + 1);
+              }}
+              value={count}
+              onChangeValue={(e) => setCount(Number(e.target.value))}
+              className="mt-2"
+            />
             <div className="mt-6">Цена:</div>
-            <div className="mt-2 text-[43px] font-[500]">100$</div>
-            <div className="button w-[300px] mt-auto">Добавить в корзину</div>
+            <div className="mt-2 text-[43px] font-[500]">
+              {detail?.price?.toLocaleString("ru-RU")}$
+            </div>
+            <div
+              className="button w-[300px] mt-auto"
+              onClick={() => toggleBasketCard(detail, count)}
+            >
+              {basketCards?.find((item) => item?.id === detail?.id)
+                ? "В корзине"
+                : "Добавить в корзину"}
+            </div>
           </div>
         </div>
       </div>
       <TabsDetail />
+      <PageLoading loading={detailLoading} />
     </>
   );
 };

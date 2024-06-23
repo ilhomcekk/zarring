@@ -9,8 +9,16 @@ import "./banner.scss";
 // import { Shimmer } from "react-shimmer";
 import { Link } from "react-router-dom";
 import { Skeleton } from "antd";
+import { bannerStore } from "../../store";
+import { useEffect } from "react";
+import { BASE_URL } from "../../config";
 
 const Banner = () => {
+  const { getList, list, listLoading } = bannerStore();
+
+  useEffect(() => {
+    getList();
+  }, []);
   return (
     <Swiper
       navigation
@@ -36,48 +44,33 @@ const Banner = () => {
         },
       }}
     >
-      <SwiperSlide>
-        <Skeleton
-          paragraph={{ rows: 0 }}
-          className="md:h-[420px] h-[185px] [&>div>h3]:!h-full [&>div>h3]:!w-full"
-        />
-      </SwiperSlide>
-      <SwiperSlide className="cursor-pointer">
-        <Link
-          to=""
-          rel="noopener noreferrer"
-          target="_blank"
-          className="block md:h-[420px] h-[185px]"
-        >
-          <LazyLoadImage
-            effect="opacity"
-            src={
-              "https://s3-alpha-sig.figma.com/img/b09f/b5f4/a38001cb51cfd233f36991e12cc278a3?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=oKQh9rooQRk2szD8HxDJK8kAHT3PvjoS-RDT4O5oICDki-EU~ao1lLCASDe50bzSQXyuzra9MvMln2nY6GnDogHD4tr-MhUmAUkEaTEmOsAWzg0SI698LZVt2eugSp9gT~CR~kL7naDUmsG6gn5-0v~RbLdeK5c8aCiN8Opc-Y6~NI5m0A5~-I3mGTrlBPl9An1m275ZXumYxEJKxyQplidHepwnBGJ63jrBNl7SsD1Xe6qu~kG6c7aEGVPrWy7Qj~BZK3iUuDGkPIWtSZXKTpljZ160ydANKrTRMcHEncZwidnMj2yqwvb-5YPMV2iDvoCEF-uSaUsv5ULJb-LUZg__"
-            }
-            alt=""
-            className="h-full object-cover w-full bg-[#eee] md:rounded-[0] rounded-[12px]"
-            wrapperClassName="w-full h-full"
+      {listLoading ? (
+        <SwiperSlide>
+          <Skeleton
+            paragraph={{ rows: 0 }}
+            className="md:h-[420px] h-[185px] [&>div>h3]:!h-full [&>div>h3]:!w-full"
           />
-        </Link>
-      </SwiperSlide>
-      <SwiperSlide className="cursor-pointer">
-        <Link
-          to=""
-          rel="noopener noreferrer"
-          target="_blank"
-          className="block md:h-[420px] h-[185px]"
-        >
-          <LazyLoadImage
-            effect="opacity"
-            src={
-              "https://s3-alpha-sig.figma.com/img/b09f/b5f4/a38001cb51cfd233f36991e12cc278a3?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=oKQh9rooQRk2szD8HxDJK8kAHT3PvjoS-RDT4O5oICDki-EU~ao1lLCASDe50bzSQXyuzra9MvMln2nY6GnDogHD4tr-MhUmAUkEaTEmOsAWzg0SI698LZVt2eugSp9gT~CR~kL7naDUmsG6gn5-0v~RbLdeK5c8aCiN8Opc-Y6~NI5m0A5~-I3mGTrlBPl9An1m275ZXumYxEJKxyQplidHepwnBGJ63jrBNl7SsD1Xe6qu~kG6c7aEGVPrWy7Qj~BZK3iUuDGkPIWtSZXKTpljZ160ydANKrTRMcHEncZwidnMj2yqwvb-5YPMV2iDvoCEF-uSaUsv5ULJb-LUZg__"
-            }
-            alt=""
-            className="h-full object-cover w-full bg-[#eee] md:rounded-[0] rounded-[12px]"
-            wrapperClassName="w-full h-full"
-          />
-        </Link>
-      </SwiperSlide>
+        </SwiperSlide>
+      ) : (
+        list?.map((item, idx) => (
+          <SwiperSlide key={idx} className="cursor-pointer">
+            <Link
+              to=""
+              rel="noopener noreferrer"
+              target="_blank"
+              className="block md:h-[420px] h-[185px]"
+            >
+              <LazyLoadImage
+                effect="opacity"
+                src={BASE_URL + item?.dataValues?.img}
+                alt=""
+                className="h-full object-cover w-full bg-[#eee] md:rounded-[0] rounded-[12px]"
+                wrapperClassName="w-full h-full"
+              />
+            </Link>
+          </SwiperSlide>
+        ))
+      )}
     </Swiper>
   );
 };
