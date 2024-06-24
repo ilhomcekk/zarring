@@ -16,7 +16,7 @@ const Categories = () => {
   return (
     <div className="wrapper">
       <Swiper
-        className="mb-6"
+        className="mb-6 max-md:mt-[3rem]"
         speed={1500}
         spaceBetween={5}
         // autoplay={{

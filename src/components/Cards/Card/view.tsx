@@ -60,7 +60,7 @@ const Card = ({ card }: Props) => {
           <div className="md:text-[33px] text-[24px] font-[500]">
             {card?.price?.toLocaleString("ru-RU")}$
           </div>
-          <div
+          <button
             className={`cart-basket ${inBasket && "active"}`}
             onClick={(e) => {
               e.preventDefault();
@@ -73,7 +73,7 @@ const Card = ({ card }: Props) => {
             }}
           >
             <img src={ASSETS.cartBasket} alt="" />
-          </div>
+          </button>
         </div>
       </div>
     </Link>

@@ -47,7 +47,7 @@ const Footer = () => {
                 Telegram
               </a>
             </div>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col justify-center gap-2">
               {/* <Link to={""} className="footer-link">
                 <img src={ASSETS.arrowWhite} alt="" />
                 Оплата и доставка
@@ -66,13 +66,13 @@ const Footer = () => {
               </Link> */}
               <Link
                 to={APP_ROUTES.ABOUT}
-                className="footer-link hover:text-[gold] font-[600]"
+                className="footer-link hover:text-[#4B94FF] font-[600]"
               >
                 {/* <img src={ASSETS.arrowWhite} alt="" /> */}О нас
               </Link>
               <Link
                 to={APP_ROUTES.POLITICS}
-                className="footer-link hover:text-[gold] font-[600]"
+                className="footer-link hover:text-[#4B94FF] font-[600]"
               >
                 {/* <img src={ASSETS.arrowWhite} alt="" /> */}
                 Соглашение конфиденциальности
@@ -81,7 +81,7 @@ const Footer = () => {
                 <img src={ASSETS.arrowWhite} alt="" />
                 Карта сайта
               </Link> */}
-              <Link to={""} className="footer-link hover:text-[gold] font-[600]">
+              <Link to={""} className="footer-link hover:text-[#4B94FF] font-[600]">
                 {/* <img src={ASSETS.arrowWhite} alt="" /> */}
                 Контакты
               </Link>

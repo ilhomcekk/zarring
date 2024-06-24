@@ -48,8 +48,8 @@ const Detail = () => {
             },
           ]}
         />
-        <div className="flex gap-x-24">
-          <div className="min-w-[510px] w-[510px] sticky top-[120px] h-max">
+        <div className="flex max-lg:flex-col gap-x-24 gap-y-6">
+          <div className="lg:min-w-[510px] lg:w-[510px] lg:sticky top-[120px] h-max">
             <Swiper
               // autoplay={{
               //   delay: 2500,
@@ -62,8 +62,8 @@ const Detail = () => {
               <SwiperSlide>
                 <Image
                   src={BASE_URL + detail?.img}
-                  className="w-full h-full object-contain"
-                  rootClassName="w-full h-[555px] rounded-[8px]"
+                  className="w-full !h-full object-contain"
+                  // rootClassName="w-full lg:h-[555px] md:h-[450px] h-[300px] rounded-[8px]"
                   alt=""
                 />
               </SwiperSlide>
