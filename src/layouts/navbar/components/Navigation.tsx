@@ -2,7 +2,6 @@ import { Link, useLocation } from "react-router-dom";
 import {
   BasketIcon,
   CatalogIcon,
-  CategoryIcon,
   FavoriteIcon,
   HomeIcon,
 } from "../../../utils/icons";
@@ -20,7 +19,7 @@ const Navigation = () => {
     {
       id: 2,
       name: "Категория",
-      Icon: CategoryIcon,
+      Icon: CatalogIcon,
       path: APP_ROUTES.NOT_FOUND,
     },
     {
