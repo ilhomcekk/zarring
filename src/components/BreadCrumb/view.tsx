@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { APP_ROUTES } from "../../router";
 import "./breadCrumb.scss";
+import { useTranslation } from "react-i18next";
 
 interface Props {
   items?: {
@@ -10,10 +11,11 @@ interface Props {
 }
 
 const BreadCrumb = ({ items }: Props) => {
+  const { t } = useTranslation();
   return (
     <div className="flex items-center gap-[4px] mb-6">
       <Link to={APP_ROUTES.HOME} className="breadcrumb">
-        Главная
+        {t("home")}
       </Link>
       {items?.map((item, idx) =>
         item?.link ? (

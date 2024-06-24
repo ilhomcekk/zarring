@@ -1,8 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import { ASSETS } from "../../../assets/images";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const Search = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
   return (
@@ -10,7 +12,7 @@ const Search = () => {
       <input
         type="search"
         className="xl:w-[550px] lg:w-[300px] placeholder:text-[#757575] text-[14px] px-4 md:rounded-[4px] rounded-full"
-        placeholder="Искать товары и категории"
+        placeholder={t("searchProduct")}
         onChange={(e) => setQuery(e.target.value)}
         onKeyPress={(e) => {
           if (e.key === "Enter") {

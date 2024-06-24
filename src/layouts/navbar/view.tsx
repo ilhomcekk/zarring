@@ -15,11 +15,12 @@ import { modalsStore, productsStore } from "../../store";
 import { PhoneOutlined } from "@ant-design/icons";
 // import { LuMenu } from "react-icons/lu";
 import "./navbar.scss";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
+  const { t } = useTranslation();
   const { openModal, modals, closeModal } = modalsStore();
   const { basketCards } = productsStore();
-  console.log("basketCards", basketCards);
 
   return (
     <>
@@ -29,7 +30,7 @@ const Navbar = () => {
             <div className="flex items-center gap-6">
               <div className="flex items-center text-[14px] text-white">
                 <img src={ASSETS.location} className="mr-3" alt="" />
-                Город:
+                {t("city")}:
                 <span className="ml-1 underline underline-offset-1 font-[500] text-white text-[14px]">
                   Ташкент
                 </span>
@@ -64,7 +65,7 @@ const Navbar = () => {
               }}
               className="hidden lg:flex items-center gap-[6px] rounded-[4px] font-500 text-primary px-4 bg-bgPrimary hover:bg-bgPrimaryHover h-[40px] text-sm mr-4"
             >
-              <CatalogIcon open={modals?.catalog} /> Каталог
+              <CatalogIcon open={modals?.catalog} /> {t("catalog")}
             </button>
             <Search />
             <div className="ml-auto flex items-center max-md:hidden">
@@ -77,14 +78,14 @@ const Navbar = () => {
                 className="flex items-center gap-3 hover:bg-light h-[40px] px-4 text-[14px] font-[500] rounded-[4px] text-gray cursor-pointer"
               >
                 <img src={ASSETS.heart} alt="" />
-                <span className="max-md:hidden">Избранное</span>
+                <span className="max-md:hidden">{t("favorites")}</span>
               </Link>
               <Link
                 to={APP_ROUTES.BASKET}
                 className="flex items-center gap-3 hover:bg-light h-[40px] md:px-4 pl-4 text-[14px] font-[500] rounded-[4px] text-gray cursor-pointer"
               >
                 <img src={ASSETS.basket} alt="" />
-                <span className="max-md:hidden">Корзина</span>
+                <span className="max-md:hidden">{t("basket")}</span>
                 <span className="text-[14px] py-[2px] px-[4px] bg-footer text-white rounded-[4px]">
                   {basketCards?.length}
                 </span>

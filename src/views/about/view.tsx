@@ -1,16 +1,18 @@
+import { useTranslation } from "react-i18next";
 import { BreadCrumb, Title } from "../../components";
 
 const About = () => {
+  const { t } = useTranslation();
   return (
     <div className="wrapper">
       <BreadCrumb
         items={[
           {
-            name: "О нас",
+            name: t("aboutUs"),
           },
         ]}
       />
-      <Title title="О нас" className="text-center" />
+      <Title title={t("aboutUs")} className="text-center" />
       <div className="leading-[150%] text-center">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
         aliquam tenetur, alias fugit dicta ex nisi repellat quibusdam,

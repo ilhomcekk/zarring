@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { ASSETS } from "../../assets/images";
+import { useTranslation } from "react-i18next";
 
 interface Props {
   className?: string;
@@ -8,6 +9,7 @@ interface Props {
 }
 
 const NoResults: FC<Props> = ({ className, text }) => {
+  const { t } = useTranslation();
   return (
     <div className={`flex items-center justify-center flex-col ${className}`}>
       <LazyLoadImage
@@ -17,7 +19,7 @@ const NoResults: FC<Props> = ({ className, text }) => {
         alt=""
       />
       <div className="font-600 text-[#141415] text-center text-[22px]">
-        {text ? text : "Ничего не найдено"}
+        {text ? text : t("noResults")}
       </div>
     </div>
   );

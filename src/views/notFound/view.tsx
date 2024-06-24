@@ -6,8 +6,8 @@ const NotFound = () => {
   return (
     <Result
       status="500"
-      title={t("technicalWorks")}
-      subTitle={t("technicalWorks")}
+      title={"Siz kirgan sahifa topilmadi"}
+      subTitle={"Siz kirgan sahifa topilmadi"}
       extra={
         <Button type="primary" className="bg-red">
           {t("home")}

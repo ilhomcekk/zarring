@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import "./title.scss";
+import { useTranslation } from "react-i18next";
 
 interface Props {
   className?: string;
@@ -8,6 +9,7 @@ interface Props {
 }
 
 const Title = ({ className, title, link }: Props) => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   return (
     <div
@@ -24,7 +26,7 @@ const Title = ({ className, title, link }: Props) => {
       {title}
       {link ? (
         <Link to={link} className="flex items-center gap-2 hover:underline">
-          См. все{" "}
+          {t("showAll")}{" "}
           <svg
             stroke="currentColor"
             fill="currentColor"

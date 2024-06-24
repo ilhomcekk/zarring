@@ -1,9 +1,11 @@
+import { useTranslation } from "react-i18next";
 import { BasketCard, BreadCrumb, NoResults, Title } from "../../components";
 import { modalsStore, productsStore } from "../../store";
 import OrderModal from "./components/OrderModal";
 import OrderSuccessModal from "./components/OrderSuccessModal";
 
 const Basket = () => {
+  const { t } = useTranslation();
   const { basketCards } = productsStore();
   const { openModal } = modalsStore();
   let totalPrice = 0;
@@ -16,14 +18,17 @@ const Basket = () => {
         <BreadCrumb
           items={[
             {
-              name: "Корзина",
+              name: t("basket"),
             },
           ]}
         />
         <div className="flex items-center">
-          <Title title="Ваша корзина," className="mb-0 font-[500]" />
+          <Title
+            title={`${t("your")} ${t("basket")},`}
+            className="mb-0 font-[500]"
+          />
           <div className="md:text-[30px] text-[20px] text-txtGray">
-             {basketCards?.length} товар
+             {basketCards?.length} {t("product")}
           </div>
         </div>
         <div className="flex max-xl:flex-col gap-6 mt-6">
@@ -36,17 +41,19 @@ const Basket = () => {
             ))}
           </div>
           <div className="w-full h-max sticky top-[80px] border border-[#A9A9A9] rounded-[8px] p-6">
-            <div className="md:text-[22px] text-[17px]">Ваш заказ</div>
+            <div className="md:text-[22px] text-[17px]">
+              {t("your")} {t("order")}
+            </div>
             <div className="md:mt-8 mt-4 flex items-center justify-between">
               <div className="md:text-[22px] text-[17px]">
-                Товары ({basketCards?.length}):
+                {t("products")} ({basketCards?.length}):
               </div>
               <div className="md:text-[22px] text-[17px]">
                 {totalPrice?.toLocaleString("ru-RU")}$
               </div>
             </div>
             <div className="md:mt-6 mt-4 md:pt-6 pt-4 border-t flex items-center justify-between">
-              <div className="md:text-[22px] text-[17px]">Итого:</div>
+              <div className="md:text-[22px] text-[17px]">{t("total")}:</div>
               <div className="md:text-[22px] text-[17px]">
                 {totalPrice?.toLocaleString("ru-RU")}$
               </div>
@@ -55,7 +62,7 @@ const Basket = () => {
               className="button md:mt-12 mt-6"
               onClick={() => openModal("order")}
             >
-              Перейти к оформлению
+              {t("checkout")}
             </div>
           </div>
         </div>

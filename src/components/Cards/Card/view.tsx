@@ -8,12 +8,14 @@ import { BASE_URL } from "../../../config";
 import { productsStore } from "../../../store";
 import { HeartFilled } from "@ant-design/icons";
 import { message } from "antd";
+import { useTranslation } from "react-i18next";
 
 interface Props {
   card: ProductType;
 }
 
 const Card = ({ card }: Props) => {
+  const { t } = useTranslation();
   const { toggleBasketCard, toggleFavoriteCard, favorites, basketCards } =
     productsStore();
   const inBasket = basketCards?.find((item) => item?.id === card?.id);
@@ -28,9 +30,9 @@ const Card = ({ card }: Props) => {
         onClick={(e) => {
           e.preventDefault();
           if (inFavorites) {
-            message.info({ content: "Успешно удалено из списка избранного" });
+            message.info({ content: t("successRemoveFromFavorites") });
           } else {
-            message.success({ content: "Успешно добавлено в избранного" });
+            message.success({ content: t("successAddToFavorites") });
           }
           toggleFavoriteCard(card);
         }}
@@ -65,9 +67,9 @@ const Card = ({ card }: Props) => {
             onClick={(e) => {
               e.preventDefault();
               if (inBasket) {
-                message.info({ content: "Успешно удалено" });
+                message.info({ content: t("successRemoveFromBasket") });
               } else {
-                message.success({ content: "Успешно добавлено в корзину" });
+                message.success({ content: t("successAddToBasket") });
               }
               toggleBasketCard(card, 1);
             }}

@@ -2,7 +2,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { BreadCrumb, Counter, PageLoading } from "../../components";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Image, message } from "antd";
-import { ASSETS } from "../../assets/images";
 import "./detail.scss";
 import { HeartIcon } from "../../utils/icons";
 import { TabsDetail } from "./components";
@@ -11,8 +10,10 @@ import { productsStore } from "../../store";
 import { useEffect, useState } from "react";
 import { HeartFilled } from "@ant-design/icons";
 import { BASE_URL } from "../../config";
+import { useTranslation } from "react-i18next";
 
 const Detail = () => {
+  const { t } = useTranslation();
   const { id } = useParams();
   const [count, setCount] = useState(1);
   const {
@@ -63,7 +64,7 @@ const Detail = () => {
                 <Image
                   src={BASE_URL + detail?.img}
                   className="w-full !h-full object-contain"
-                  // rootClassName="w-full lg:h-[555px] md:h-[450px] h-[300px] rounded-[8px]"
+                  rootClassName="w-full lg:h-[555px] md:h-[450px] h-[300px] rounded-[8px]"
                   alt=""
                 />
               </SwiperSlide>
@@ -71,9 +72,9 @@ const Detail = () => {
           </div>
           <div className="w-full flex flex-col">
             <div className="flex items-center">
-              <div className="text-breadGray text-[13px]">
+              {/* <div className="text-breadGray text-[13px]">
                 Более 700 заказов
-              </div>
+              </div> */}
               <div
                 onClick={() => toggleFavoriteCard(detail)}
                 className="ml-auto flex items-center gap-2 h-[40px] px-3 hover:bg-light rounded-[4px] cursor-pointer"
@@ -81,26 +82,27 @@ const Detail = () => {
                 {favorites?.find((item) => item?.id === detail?.id) ? (
                   <>
                     <HeartFilled className="[&>svg]:fill-red [&>svg]:text-[21px]" />
-                    В желание
+                    {t("intoDesire")}
                   </>
                 ) : (
                   <>
-                    <HeartIcon />В желания
+                    <HeartIcon />
+                    {t("intoDesires")}
                   </>
                 )}
               </div>
             </div>
             <div className="text-[22px] mt-4">{detail?.title}</div>
-            <div className="mt-6 flex items-center gap-2 cursor-pointer">
+            {/* <div className="mt-6 flex items-center gap-2 cursor-pointer">
               Доставка: <img src={ASSETS.info} alt="" />
-            </div>
+            </div> */}
             <div className="flex flex-col gap-3 mt-6 pt-3 border-t border-border">
               <div>Кратко о товаре:</div>
               <div>Размер: 120 / 210</div>
               <div>Вес:</div>
               <div>Проба:</div>
             </div>
-            <div className="mt-6">Количество:</div>
+            <div className="mt-6">{t("amount")}:</div>
             <Counter
               onMinus={() => {
                 if (count > 1) {
@@ -114,7 +116,7 @@ const Detail = () => {
               onChangeValue={(e) => setCount(Number(e.target.value))}
               className="mt-2"
             />
-            <div className="mt-6">Цена:</div>
+            <div className="mt-6">{t("price")}:</div>
             <div className="mt-2 text-[43px] font-[500]">
               {detail?.price?.toLocaleString("ru-RU")}$
             </div>
@@ -122,16 +124,16 @@ const Detail = () => {
               className="button w-[300px] mt-auto"
               onClick={() => {
                 if (inBasket) {
-                  message.success({ content: "Успешно добавлено в корзину" });
+                  message.success({ content: t("successAddToBasket") });
                 } else {
-                  message.info({ content: "Успешно удалено" });
+                  message.info({ content: t("successRemoveFromBasket") });
                 }
                 toggleBasketCard(detail, count);
               }}
             >
               {basketCards?.find((item) => item?.id === detail?.id)
-                ? "В корзине"
-                : "Добавить в корзину"}
+                ? t("inBasket")
+                : t("addToBasket")}
             </div>
           </div>
         </div>

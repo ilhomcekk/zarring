@@ -7,33 +7,35 @@ import {
 } from "../../../utils/icons";
 import { APP_ROUTES } from "../../../router";
 import { productsStore } from "../../../store";
+import { useTranslation } from "react-i18next";
 
 const Navigation = () => {
+  const { t } = useTranslation();
   const { pathname } = useLocation();
   const { basketCards } = productsStore();
   const list = [
     {
       id: 1,
-      name: "Главная",
+      name: t("home"),
       Icon: HomeIcon,
       path: APP_ROUTES.HOME,
     },
     {
       id: 2,
-      name: "Категория",
+      name: t("catalog"),
       Icon: CatalogIcon,
       path: APP_ROUTES.NOT_FOUND,
     },
     {
       id: 3,
-      name: "Корзина",
+      name: t("basket"),
       Icon: BasketIcon,
       counter: true,
       path: APP_ROUTES.BASKET,
     },
     {
       id: 4,
-      name: "Избранное",
+      name: t("favorites"),
       Icon: FavoriteIcon,
       path: APP_ROUTES.FAVORITES,
     },

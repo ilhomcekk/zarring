@@ -3,19 +3,21 @@ import { BrandCard, BrandSkeleton, Title } from "..";
 import { Pagination } from "swiper/modules";
 import { brandStore } from "../../store";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 interface Props {
   className?: string;
 }
 
 const Brands = ({ className }: Props) => {
+  const { t } = useTranslation();
   const { getList, list, listLoading } = brandStore();
   useEffect(() => {
     getList();
   }, []);
   return (
     <div className={`${className}`}>
-      <Title title="Бренды" className="text-center mb-4" />
+      <Title title={t("brands")} className="text-center mb-4" />
       <div className="bg-red h-[1px] w-[50px] mx-auto"></div>
       <Swiper
         spaceBetween={15}

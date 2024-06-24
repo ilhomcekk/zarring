@@ -2,8 +2,10 @@ import { Link } from "react-router-dom";
 import { ASSETS } from "../../assets/images";
 import "./footer.scss";
 import { APP_ROUTES } from "../../router";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <div
       className="bg-no-repeat bg-cover py-[40px] mt-[50px] max-md:pb-[100px]"
@@ -68,26 +70,32 @@ const Footer = () => {
                 to={APP_ROUTES.ABOUT}
                 className="footer-link hover:text-[#4B94FF] font-[600]"
               >
-                {/* <img src={ASSETS.arrowWhite} alt="" /> */}О нас
+                {/* <img src={ASSETS.arrowWhite} alt="" /> */}
+                {t("aboutUs")}
               </Link>
               <Link
                 to={APP_ROUTES.POLITICS}
                 className="footer-link hover:text-[#4B94FF] font-[600]"
               >
                 {/* <img src={ASSETS.arrowWhite} alt="" /> */}
-                Соглашение конфиденциальности
+                {t("politics")}
               </Link>
               {/* <Link to={""} className="footer-link">
                 <img src={ASSETS.arrowWhite} alt="" />
                 Карта сайта
               </Link> */}
-              <Link to={""} className="footer-link hover:text-[#4B94FF] font-[600]">
+              <Link
+                to={""}
+                className="footer-link hover:text-[#4B94FF] font-[600]"
+              >
                 {/* <img src={ASSETS.arrowWhite} alt="" /> */}
-                Контакты
+                {t("contacts")}
               </Link>
             </div>
             <div className="flex flex-col">
-              <div className="footer-link max-md:mt-2">Телефон/телеграм:</div>
+              <div className="footer-link max-md:mt-2">
+                {t("phone")}/{t("telegram")}:
+              </div>
               <div className="text-[21px] text-white max-md:my-4">
                 +998 88 144-05-44
               </div>

@@ -7,8 +7,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Skeleton } from "antd";
 import { categoryStore } from "../../../store";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 const Categories = () => {
+  const { t } = useTranslation();
   const { list, getList, listLoading } = categoryStore();
   useEffect(() => {
     getList({ page: 1, pageSize: 20 });
@@ -59,7 +61,7 @@ const Categories = () => {
                   effect="opacity"
                   alt=""
                 />
-                Главная
+                {t("home")}
               </Link>
             </SwiperSlide>
             {list?.map((item, idx) => (

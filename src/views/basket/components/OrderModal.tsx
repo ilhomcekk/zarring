@@ -1,8 +1,10 @@
 import { Button, Form, Input, Modal, message } from "antd";
 import { modalsStore, orderStore, productsStore } from "../../../store";
 import { PhoneInput } from "../../../components";
+import { useTranslation } from "react-i18next";
 
 const OrderModal = () => {
+  const { t } = useTranslation();
   const { modals, closeModal, openModal } = modalsStore();
   const { create, createLoading } = orderStore();
   const [form] = Form.useForm();
@@ -30,10 +32,10 @@ const OrderModal = () => {
 
   const forms = [
     {
-      label: "Имя",
+      label: t("name"),
       name: "user_name",
       required: true,
-      message: "Заполните",
+      message: t("required"),
       child: (
         <Input
           onChange={(e) => form.setFieldValue("user_name", e.target.value)}
@@ -41,10 +43,10 @@ const OrderModal = () => {
       ),
     },
     {
-      label: "Номер телефона",
+      label: t("phoneNumber"),
       name: "user_number",
       required: true,
-      message: "Заполните",
+      message: t("required"),
       child: (
         <PhoneInput onChange={(e) => form.setFieldValue("user_number", e)} />
       ),
@@ -57,7 +59,7 @@ const OrderModal = () => {
       footer={null}
       onCancel={() => closeModal("order")}
       onClose={() => closeModal("order")}
-      title="Оформить заказ"
+      title={`${t("design")} ${t("order")}`}
       centered
     >
       <Form form={form} layout="vertical" className="mt-12">
@@ -77,7 +79,7 @@ const OrderModal = () => {
           loading={createLoading}
           className="button w-full mt-12"
         >
-          Оформить
+          {t("design")}
         </Button>
       </Form>
     </Modal>

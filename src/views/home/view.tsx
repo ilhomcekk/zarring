@@ -1,6 +1,8 @@
+import { useTranslation } from "react-i18next";
 import { Banner, Brands, Products, Title } from "../../components";
 
 const Home = () => {
+  const { t } = useTranslation();
   return (
     <div className="wrapper">
       <Banner />
@@ -9,7 +11,7 @@ const Home = () => {
       <Products categoryId="1" className="md:mt-[50px] mt-[25px]" />
       <Brands className="md:mt-[50px] mt-[35px] max-md:mb-4" />
       <Title
-        title="Что может предложить Ziynat"
+        title={t("whatCanOffer")}
         className="text-center md:mt-[50px] mt-[25px] max-md:mb-4"
       />
       <div className="text-center max-md:text-justify text-[14px] leading-[22px]">
@@ -36,7 +38,7 @@ const Home = () => {
         должна сверкать, для этого используются массивные и яркие украшения.
       </div>
       <Title
-        title="Преимущества магазина Ziynat.COM.UZ"
+        title={t("advantages")}
         className="text-center md:mt-[50px] mt-[25px] max-md:mb-4"
       />
       <div className="text-center max-md:text-justify text-[14px] leading-[22px]">

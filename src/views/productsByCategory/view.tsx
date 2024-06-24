@@ -3,8 +3,12 @@ import { BreadCrumb, Card, NoResults, PageLoading } from "../../components";
 import { categoryStore, productsStore } from "../../store";
 import { CategoryItem } from "./components";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import { findCategoryById } from "../../utils";
+import { CategoryType } from "../../types";
 
 const ProductsByCategory = () => {
+  const { t } = useTranslation();
   const { id } = useParams();
   const { list } = categoryStore();
   const {
@@ -12,6 +16,7 @@ const ProductsByCategory = () => {
     productsByCategory,
     productsByCategoryLoading,
   } = productsStore();
+  const category: CategoryType = findCategoryById(list, id);
 
   useEffect(() => {
     if (id) {
@@ -24,13 +29,13 @@ const ProductsByCategory = () => {
         <BreadCrumb
           items={[
             {
-              name: "Браслеты",
+              name: category?.title || "",
             },
           ]}
         />
         <div className="flex max-lg:flex-col">
           <div className="flex-[260px]">
-            <div className="text-[18px] mb-2">Категории</div>
+            <div className="text-[18px] mb-2">{t("categories")}</div>
             <div className="flex flex-col gap-[2px]">
               {list?.map((item, idx) => (
                 <>
