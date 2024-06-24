@@ -4,13 +4,14 @@ import { BiMap } from "react-icons/bi";
 import { GiTeleport } from "react-icons/gi";
 import { GrContactInfo } from "react-icons/gr";
 import { BsTelephone } from "react-icons/bs";
-import { modalsStore } from "../../../store";
+import { categoryStore, modalsStore } from "../../../store";
 import { Accordion } from "../../../components";
 import MobileItem from "./MobileItem";
 import MenuItem from "./MenuItem";
 
 const MobileMenu = () => {
   const { modals, closeModal } = modalsStore();
+  const { list } = categoryStore();
 
   return (
     <div className={`mobile-menu ${modals?.menu && "show"}`}>
@@ -22,8 +23,10 @@ const MobileMenu = () => {
       <div className="px-4 my-[7px] bg-white">
         <Accordion
           title="Каталог"
-          content={[...Array(10)].map((_, idx) => (
+          content={list?.map((item, idx) => (
             <MenuItem
+              item={item}
+              onMouseEnter={() => {}}
               key={idx}
               className="px-0 py-2 border-t border-[#76797f33]"
             />
