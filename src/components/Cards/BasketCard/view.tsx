@@ -16,7 +16,7 @@ const BasketCard = ({ card }: Props) => {
   const [qtu, setQtu] = useState(card?.count || 1);
   const { setCount, toggleBasketCard } = productsStore();
   return (
-    <div className="flex gap-6 md:border border-[#A9A9A9] rounded-[8px] md:p-6">
+    <div className="flex gap-6 md:border border-[#A9A9A9] rounded-[8px] md:p-6 relative">
       <Link to={`/product/${card?.id}`}>
         <LazyLoadImage
           wrapperClassName="rounded-[8px] shadow-card md:h-[200px] h-[85px] md:min-w-[215px] md:w-[215px] min-w-[85px] w-[85px]"
@@ -28,7 +28,7 @@ const BasketCard = ({ card }: Props) => {
       </Link>
       <div className="flex max-md:flex-col justify-between w-full">
         <div className="md:pt-4 flex flex-col md:gap-2 gap-1">
-          <div className="md:text-[22px] text-[14px] mb-2">{card?.title}</div>
+          <div className="md:text-[22px] text-[14px] mb-2 max-md:w-[90%]">{card?.title}</div>
           <div className="flex flex-col gap-2 max-md:hidden">
             <div className="text-[#1F2026]">Кратко о товаре:</div>
             <div className="text-[#1F2026]">Размер: 120 / 210</div>
@@ -40,14 +40,14 @@ const BasketCard = ({ card }: Props) => {
         </div>
         <div className="md:ml-auto flex flex-col md:items-end justify-between md:min-w-[30%] md:w-[30%]">
           <div
-            className="flex items-center gap-2 cursor-pointer"
+            className="flex items-center gap-2 cursor-pointer max-md:absolute top-0 right-0"
             onClick={() => {
               message.success("Успешно удалено");
               toggleBasketCard(card);
             }}
           >
             <HiTrash className="fill-txtGray text-[22px]" />
-            <span className="text-txtGray text-[14px] leading-none">
+            <span className="text-txtGray text-[14px] max-md:hidden leading-none">
               Удалить
             </span>
           </div>

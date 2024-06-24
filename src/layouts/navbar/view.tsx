@@ -46,14 +46,14 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className="md:py-5 py-2 sticky top-0 bg-white z-[99]">
+      <div className="md:py-5 py-1 sticky top-0 bg-white z-[99]">
         <div className="wrapper">
           <div className="flex items-center">
             {/* <LuMenu
               onClick={() => openModal("menu")}
               className="hidden max-lg:block min-w-[20px] w-[20px] h-[20px] mr-4"
             /> */}
-            <Logo className="mr-8" />
+            <Logo className="mr-8 max-md:hidden" />
             <button
               onClick={() => {
                 if (modals?.catalog) {
@@ -67,7 +67,7 @@ const Navbar = () => {
               <CatalogIcon open={modals?.catalog} /> Каталог
             </button>
             <Search />
-            <div className="ml-auto flex items-center">
+            <div className="ml-auto flex items-center max-md:hidden">
               {/* <div className="flex items-center gap-3 hover:bg-light h-[40px] px-4 text-[14px] font-[500] rounded-[4px] text-gray cursor-pointer">
                 <img src={ASSETS.user} alt="" />
                 Войти

@@ -24,12 +24,12 @@ const OrderModal = () => {
   const forms = [
     {
       label: "Имя",
-      name: "user_name",
+      name: "user_number",
       required: true,
       message: "Заполните",
       child: (
         <Input
-          onChange={(e) => form.setFieldValue("user_name", e.target.value)}
+          onChange={(e) => form.setFieldValue("user_number", e.target.value)}
         />
       ),
     },

@@ -26,6 +26,7 @@ const Products = ({ className, categoryId }: Props) => {
       <Title
         title={category?.title || ""}
         className={`${className} font-[500]`}
+        link={`/category/${category?.id}`}
       />
       <div className="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-x-[16px] gap-y-5">
         {productsByCategoryLoading

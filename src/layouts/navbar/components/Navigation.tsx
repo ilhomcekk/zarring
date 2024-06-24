@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import {
   BasketIcon,
+  CatalogIcon,
   CategoryIcon,
   FavoriteIcon,
   HomeIcon,
@@ -11,21 +12,25 @@ const Navigation = () => {
   const { pathname } = useLocation();
   const list = [
     {
+      id: 1,
       name: "Главная",
       Icon: HomeIcon,
       path: APP_ROUTES.HOME,
     },
     {
+      id: 2,
       name: "Категория",
       Icon: CategoryIcon,
       path: APP_ROUTES.NOT_FOUND,
     },
     {
+      id: 3,
       name: "Корзина",
       Icon: BasketIcon,
       path: APP_ROUTES.BASKET,
     },
     {
+      id: 4,
       name: "Избранное",
       Icon: FavoriteIcon,
       path: APP_ROUTES.FAVORITES,
@@ -39,7 +44,17 @@ const Navigation = () => {
           to={Item.path}
           className={`${Item.path === pathname && "stroke-white"}`}
         >
-          <Item.Icon strokeWidth={Item.path === pathname ? "1.1" : 1} />
+          <Item.Icon
+            className="w-[24px] h-[24px]"
+            // strokeWidth={Item.path === pathname ? "1.1" : 1}
+            strokeWidth={
+              Item.path === pathname && Item.id === 3
+                ? "0.3"
+                : Item.path === pathname
+                ? "1.1"
+                : 1
+            }
+          />
           {Item.name}
         </Link>
       ))}

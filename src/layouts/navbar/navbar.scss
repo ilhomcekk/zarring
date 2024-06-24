@@ -152,14 +152,13 @@
   @media (max-width: 767px) {
     position: absolute;
     top: 100%;
-    left: 0;
-    width: 100%;
+    left: 15px;
+    right: 15px;
     justify-content: space-between;
     z-index: 99;
     background: #f2f4f7;
     border: none;
     height: 32px !important;
-    border-radius: 0 !important;
     input {
       width: 100%;
       background: #f2f4f7;
@@ -188,6 +187,10 @@
     font-size: 13px;
     gap: 5px;
     color: #fff;
+    svg {
+      filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%)
+        hue-rotate(141deg) brightness(111%) contrast(101%);
+    }
   }
 }
 

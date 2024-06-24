@@ -4,7 +4,7 @@ import "./footer.scss";
 const Footer = () => {
   return (
     <div
-      className="bg-no-repeat bg-cover py-[40px] mt-[50px]"
+      className="bg-no-repeat bg-cover py-[40px] mt-[50px] max-md:pb-[100px]"
       style={{ backgroundImage: `url(${ASSETS.footerBg})` }}
     >
       <div className="wrapper">
