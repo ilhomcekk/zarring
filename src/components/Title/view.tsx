@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./title.scss";
 
 interface Props {
@@ -8,11 +8,18 @@ interface Props {
 }
 
 const Title = ({ className, title, link }: Props) => {
+  const navigate = useNavigate();
   return (
     <div
       className={`title ${className} ${
-        link && "flex items-center justify-between"
+        link &&
+        "flex items-center justify-between cursor-pointer hover:text-green"
       }`}
+      onClick={() => {
+        if (link) {
+          navigate(link);
+        }
+      }}
     >
       {title}
       {link ? (

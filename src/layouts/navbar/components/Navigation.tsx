@@ -6,9 +6,11 @@ import {
   HomeIcon,
 } from "../../../utils/icons";
 import { APP_ROUTES } from "../../../router";
+import { productsStore } from "../../../store";
 
 const Navigation = () => {
   const { pathname } = useLocation();
+  const { basketCards } = productsStore();
   const list = [
     {
       id: 1,
@@ -26,6 +28,7 @@ const Navigation = () => {
       id: 3,
       name: "Корзина",
       Icon: BasketIcon,
+      counter: true,
       path: APP_ROUTES.BASKET,
     },
     {
@@ -43,6 +46,9 @@ const Navigation = () => {
           to={Item.path}
           className={`${Item.path === pathname && "stroke-white"}`}
         >
+          {Item?.counter && (
+            <div className="counter">{basketCards?.length}</div>
+          )}
           <Item.Icon
             className="w-[24px] h-[24px]"
             // strokeWidth={Item.path === pathname ? "1.1" : 1}

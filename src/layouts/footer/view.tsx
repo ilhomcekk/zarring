@@ -66,13 +66,13 @@ const Footer = () => {
               </Link> */}
               <Link
                 to={APP_ROUTES.ABOUT}
-                className="footer-link hover:text-[gold]"
+                className="footer-link hover:text-[gold] font-[600]"
               >
                 {/* <img src={ASSETS.arrowWhite} alt="" /> */}О нас
               </Link>
               <Link
                 to={APP_ROUTES.POLITICS}
-                className="footer-link hover:text-[gold]"
+                className="footer-link hover:text-[gold] font-[600]"
               >
                 {/* <img src={ASSETS.arrowWhite} alt="" /> */}
                 Соглашение конфиденциальности
@@ -81,13 +81,13 @@ const Footer = () => {
                 <img src={ASSETS.arrowWhite} alt="" />
                 Карта сайта
               </Link> */}
-              <Link to={""} className="footer-link hover:text-[gold]">
+              <Link to={""} className="footer-link hover:text-[gold] font-[600]">
                 {/* <img src={ASSETS.arrowWhite} alt="" /> */}
                 Контакты
               </Link>
             </div>
             <div className="flex flex-col">
-              <div className="footer-link">Телефон/телеграм:</div>
+              <div className="footer-link max-md:mt-2">Телефон/телеграм:</div>
               <div className="text-[21px] text-white max-md:my-4">
                 +998 88 144-05-44
               </div>
@@ -96,7 +96,7 @@ const Footer = () => {
                 момента подтверждения заказа покупателем. Доставка по регионам
                 производится в течение 2 дней.
               </div> */}
-              <div className="footer-link mt-6">
+              <div className="footer-link md:mt-6">
                 Пункт самовывоза: ул. Амира Темура 42, Ташкент График работы:
                 Понедельник-Суббота с 9:00 до 19:00
               </div>

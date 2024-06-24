@@ -28,7 +28,7 @@ const BasketCard = ({ card }: Props) => {
       </Link>
       <div className="flex max-md:flex-col justify-between w-full">
         <div className="md:pt-4 flex flex-col md:gap-2 gap-1">
-          <div className="md:text-[22px] text-[14px] mb-2 max-md:w-[90%]">{card?.title}</div>
+          <div className="md:text-[22px] text-[14px] mb-2 max-md:w-[80%]">{card?.title}</div>
           <div className="flex flex-col gap-2 max-md:hidden">
             <div className="text-[#1F2026]">Кратко о товаре:</div>
             <div className="text-[#1F2026]">Размер: 120 / 210</div>
@@ -40,13 +40,13 @@ const BasketCard = ({ card }: Props) => {
         </div>
         <div className="md:ml-auto flex flex-col md:items-end justify-between md:min-w-[30%] md:w-[30%]">
           <div
-            className="flex items-center gap-2 cursor-pointer max-md:absolute top-0 right-0"
+            className="flex items-center gap-2 md:pt-4 cursor-pointer max-md:absolute top-[15px] right-[10px]"
             onClick={() => {
               message.success("Успешно удалено");
               toggleBasketCard(card);
             }}
           >
-            <HiTrash className="fill-txtGray text-[22px]" />
+            <HiTrash className="fill-txtGray md:text-[22px] text-[30px]" />
             <span className="text-txtGray text-[14px] max-md:hidden leading-none">
               Удалить
             </span>

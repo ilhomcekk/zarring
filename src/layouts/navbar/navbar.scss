@@ -179,6 +179,7 @@
     display: flex;
   }
   a {
+    position: relative;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -191,6 +192,20 @@
       filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%)
         hue-rotate(141deg) brightness(111%) contrast(101%);
     }
+  }
+  .counter {
+    position: absolute;
+    top: -5px;
+    right: 15px;
+    color: #26644d;
+    background: #fff;
+    border-radius: 50%;
+    padding: 2px;
+    font-size: 12px;
+    min-width: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 

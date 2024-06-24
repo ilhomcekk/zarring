@@ -65,9 +65,9 @@ const Card = ({ card }: Props) => {
             onClick={(e) => {
               e.preventDefault();
               if (inBasket) {
-                message.success({ content: "Успешно добавлено в корзину" });
-              } else {
                 message.info({ content: "Успешно удалено" });
+              } else {
+                message.success({ content: "Успешно добавлено в корзину" });
               }
               toggleBasketCard(card, 1);
             }}
