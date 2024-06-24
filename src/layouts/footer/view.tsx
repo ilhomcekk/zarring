@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
 import { ASSETS } from "../../assets/images";
 import "./footer.scss";
+import { APP_ROUTES } from "../../router";
 
 const Footer = () => {
   return (
@@ -45,8 +47,8 @@ const Footer = () => {
                 Telegram
               </a>
             </div>
-            {/* <div className="flex flex-col gap-2">
-              <Link to={""} className="footer-link">
+            <div className="flex flex-col gap-2">
+              {/* <Link to={""} className="footer-link">
                 <img src={ASSETS.arrowWhite} alt="" />
                 Оплата и доставка
               </Link>
@@ -61,23 +63,29 @@ const Footer = () => {
               <Link to={""} className="footer-link">
                 <img src={ASSETS.arrowWhite} alt="" />
                 Вопрос-ответ
+              </Link> */}
+              <Link
+                to={APP_ROUTES.ABOUT}
+                className="footer-link hover:text-[gold]"
+              >
+                {/* <img src={ASSETS.arrowWhite} alt="" /> */}О нас
               </Link>
-              <Link to={""} className="footer-link">
-                <img src={ASSETS.arrowWhite} alt="" />О нас
-              </Link>
-              <Link to={""} className="footer-link">
-                <img src={ASSETS.arrowWhite} alt="" />
+              <Link
+                to={APP_ROUTES.POLITICS}
+                className="footer-link hover:text-[gold]"
+              >
+                {/* <img src={ASSETS.arrowWhite} alt="" /> */}
                 Соглашение конфиденциальности
               </Link>
-              <Link to={""} className="footer-link">
+              {/* <Link to={""} className="footer-link">
                 <img src={ASSETS.arrowWhite} alt="" />
                 Карта сайта
-              </Link>
-              <Link to={""} className="footer-link">
-                <img src={ASSETS.arrowWhite} alt="" />
+              </Link> */}
+              <Link to={""} className="footer-link hover:text-[gold]">
+                {/* <img src={ASSETS.arrowWhite} alt="" /> */}
                 Контакты
               </Link>
-            </div> */}
+            </div>
             <div className="flex flex-col">
               <div className="footer-link">Телефон/телеграм:</div>
               <div className="text-[21px] text-white max-md:my-4">

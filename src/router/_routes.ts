@@ -7,6 +7,8 @@ import {
   NotFound,
   ProductsByCategory,
   Search,
+  Politics,
+  About
 } from "../views";
 
 export const _routes = [
@@ -34,6 +36,14 @@ export const _routes = [
   {
     path: APP_ROUTES.CATEGORY + "/:id",
     element: ProductsByCategory,
+  },
+  {
+    path: APP_ROUTES.POLITICS,
+    element: Politics,
+  },
+  {
+    path: APP_ROUTES.ABOUT,
+    element: About,
   },
   {
     path: "*",

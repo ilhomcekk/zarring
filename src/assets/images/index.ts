@@ -17,6 +17,7 @@ import info from "./info.svg";
 import minus from "./minus.svg";
 import plus from "./plus.svg";
 import noResultsImage from "./noResult.webp";
+import success from './success.jpg'
 
 export const ASSETS = {
   location,
@@ -38,4 +39,5 @@ export const ASSETS = {
   minus,
   plus,
   noResultsImage,
+  success
 };

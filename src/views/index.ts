@@ -5,5 +5,7 @@ import Basket from "./basket/view";
 import Favorites from "./favorites/view";
 import Search from "./search/view";
 import ProductsByCategory from "./productsByCategory/view";
+import Politics from './politics/view'
+import About from "./about/view";
 
-export { Home, NotFound, Detail, Basket, Favorites, Search, ProductsByCategory };
+export { Home, NotFound, Detail, Basket, Favorites, Search, ProductsByCategory, Politics, About };

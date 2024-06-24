@@ -1,6 +1,7 @@
 import { BasketCard, BreadCrumb, NoResults, Title } from "../../components";
 import { modalsStore, productsStore } from "../../store";
 import OrderModal from "./components/OrderModal";
+import OrderSuccessModal from "./components/OrderSuccessModal";
 
 const Basket = () => {
   const { basketCards } = productsStore();
@@ -60,6 +61,7 @@ const Basket = () => {
         </div>
       </div>
       <OrderModal />
+      <OrderSuccessModal />
     </>
   );
 };

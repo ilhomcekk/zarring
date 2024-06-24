@@ -3,7 +3,7 @@ import { modalsStore, orderStore, productsStore } from "../../../store";
 import { PhoneInput } from "../../../components";
 
 const OrderModal = () => {
-  const { modals, closeModal } = modalsStore();
+  const { modals, closeModal, openModal } = modalsStore();
   const { create, createLoading } = orderStore();
   const [form] = Form.useForm();
   const { basketCards } = productsStore();
@@ -12,11 +12,18 @@ const OrderModal = () => {
     form.validateFields().then(() => {
       const values = form.getFieldsValue();
       values["products"] = basketCards;
-      create(values).then(() => {
-        message.success({
-          content: "Ваш заказ принят! Мы вам перезвоним",
-        });
-        form.resetFields();
+      create(values).then((res) => {
+        if (res?.id) {
+          message.success({
+            content: "Ваш заказ принят! Мы вам перезвоним",
+          });
+          closeModal("order");
+          form.resetFields();
+          openModal("orderSuccess");
+          setTimeout(() => {
+            closeModal("orderSuccess");
+          }, 5000);
+        }
       });
     });
   };
@@ -24,22 +31,22 @@ const OrderModal = () => {
   const forms = [
     {
       label: "Имя",
-      name: "user_number",
+      name: "user_name",
       required: true,
       message: "Заполните",
       child: (
         <Input
-          onChange={(e) => form.setFieldValue("user_number", e.target.value)}
+          onChange={(e) => form.setFieldValue("user_name", e.target.value)}
         />
       ),
     },
     {
       label: "Номер телефона",
-      name: "user_phone",
+      name: "user_number",
       required: true,
       message: "Заполните",
       child: (
-        <PhoneInput onChange={(e) => form.setFieldValue("user_phone", e)} />
+        <PhoneInput onChange={(e) => form.setFieldValue("user_number", e)} />
       ),
     },
   ];
