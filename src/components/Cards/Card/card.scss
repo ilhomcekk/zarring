@@ -7,4 +7,8 @@
   align-items: center;
   justify-content: center;
   margin-left: auto;
+  &.active {
+    box-shadow: none;
+    background: #d0d2d9;
+  }
 }

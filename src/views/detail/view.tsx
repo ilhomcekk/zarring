@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { BreadCrumb, Counter, PageLoading } from "../../components";
 import { Autoplay, Navigation } from "swiper/modules";
-import { Image } from "antd";
+import { Image, message } from "antd";
 import { ASSETS } from "../../assets/images";
 import "./detail.scss";
 import { HeartIcon } from "../../utils/icons";
@@ -10,6 +10,7 @@ import { useParams } from "react-router-dom";
 import { productsStore } from "../../store";
 import { useEffect, useState } from "react";
 import { HeartFilled } from "@ant-design/icons";
+import { BASE_URL } from "../../config";
 
 const Detail = () => {
   const { id } = useParams();
@@ -23,6 +24,7 @@ const Detail = () => {
     toggleBasketCard,
     basketCards,
   } = productsStore();
+  const inBasket = basketCards?.find((item) => item?.id === detail?.id);
   useEffect(() => {
     if (id) {
       getDetail(id);
@@ -59,15 +61,7 @@ const Detail = () => {
             >
               <SwiperSlide>
                 <Image
-                  src={ASSETS.ring}
-                  className="w-full h-full object-contain"
-                  rootClassName="w-full h-[555px] rounded-[8px]"
-                  alt=""
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Image
-                  src={ASSETS.ring}
+                  src={BASE_URL + detail?.img}
                   className="w-full h-full object-contain"
                   rootClassName="w-full h-[555px] rounded-[8px]"
                   alt=""
@@ -126,7 +120,14 @@ const Detail = () => {
             </div>
             <div
               className="button w-[300px] mt-auto"
-              onClick={() => toggleBasketCard(detail, count)}
+              onClick={() => {
+                if (inBasket) {
+                  message.success({ content: "Успешно добавлено в корзину" });
+                } else {
+                  message.info({ content: "Успешно удалено" });
+                }
+                toggleBasketCard(detail, count);
+              }}
             >
               {basketCards?.find((item) => item?.id === detail?.id)
                 ? "В корзине"

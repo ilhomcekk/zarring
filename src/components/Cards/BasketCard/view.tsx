@@ -4,6 +4,9 @@ import { ProductType } from "../../../types";
 import { BASE_URL } from "../../../config";
 import { useState } from "react";
 import { productsStore } from "../../../store";
+import { HiTrash } from "react-icons/hi2";
+import { message } from "antd";
+import { Link } from "react-router-dom";
 
 interface Props {
   card: ProductType;
@@ -11,16 +14,18 @@ interface Props {
 
 const BasketCard = ({ card }: Props) => {
   const [qtu, setQtu] = useState(card?.count || 1);
-  const { setCount } = productsStore();
+  const { setCount, toggleBasketCard } = productsStore();
   return (
     <div className="flex gap-6 md:border border-[#A9A9A9] rounded-[8px] md:p-6">
-      <LazyLoadImage
-        wrapperClassName="rounded-[8px] shadow-card md:h-[200px] h-[85px] md:min-w-[215px] md:w-[215px] min-w-[85px] w-[85px]"
-        className="h-full w-full object-contain"
-        src={BASE_URL + card?.img}
-        effect="opacity"
-        alt=""
-      />
+      <Link to={`/product/${card?.id}`}>
+        <LazyLoadImage
+          wrapperClassName="rounded-[8px] shadow-card md:h-[200px] h-[85px] md:min-w-[215px] md:w-[215px] min-w-[85px] w-[85px]"
+          className="h-full w-full object-contain"
+          src={BASE_URL + card?.img}
+          effect="opacity"
+          alt=""
+        />
+      </Link>
       <div className="flex max-md:flex-col justify-between w-full">
         <div className="md:pt-4 flex flex-col md:gap-2 gap-1">
           <div className="md:text-[22px] text-[14px] mb-2">{card?.title}</div>
@@ -33,8 +38,20 @@ const BasketCard = ({ card }: Props) => {
             <div className="text-[#1F2026]">Алмаз:</div>
           </div>
         </div>
-        <div className="md:ml-auto flex flex-col md:items-end justify-between md:min-w-[20%] md:w-[20%]">
-          <div className="md:text-[50px] text-[20px] font-[500] whitespace-nowrap md:pt-10 pt-4">
+        <div className="md:ml-auto flex flex-col md:items-end justify-between md:min-w-[30%] md:w-[30%]">
+          <div
+            className="flex items-center gap-2 cursor-pointer"
+            onClick={() => {
+              message.success("Успешно удалено");
+              toggleBasketCard(card);
+            }}
+          >
+            <HiTrash className="fill-txtGray text-[22px]" />
+            <span className="text-txtGray text-[14px] leading-none">
+              Удалить
+            </span>
+          </div>
+          <div className="md:text-[50px] text-[20px] font-[500] whitespace-nowrap">
             {card?.price?.toLocaleString("ru-RU")}$
           </div>
           <Counter
@@ -42,6 +59,8 @@ const BasketCard = ({ card }: Props) => {
               if (qtu > 1) {
                 setQtu((prev) => prev - 1);
                 setCount(card, Number(card?.count) - 1);
+              } else {
+                toggleBasketCard(card);
               }
             }}
             onPlus={() => {

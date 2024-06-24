@@ -7,13 +7,17 @@ import { ProductType } from "../../../types";
 import { BASE_URL } from "../../../config";
 import { productsStore } from "../../../store";
 import { HeartFilled } from "@ant-design/icons";
+import { message } from "antd";
 
 interface Props {
   card: ProductType;
 }
 
 const Card = ({ card }: Props) => {
-  const { toggleBasketCard, toggleFavoriteCard, favorites } = productsStore();
+  const { toggleBasketCard, toggleFavoriteCard, favorites, basketCards } =
+    productsStore();
+  const inBasket = basketCards?.find((item) => item?.id === card?.id);
+  const inFavorites = favorites?.find((item) => item?.id === card?.id);
   return (
     <Link
       to={`/product/${card.id}`}
@@ -23,6 +27,11 @@ const Card = ({ card }: Props) => {
       <button
         onClick={(e) => {
           e.preventDefault();
+          if (inFavorites) {
+            message.info({ content: "Успешно удалено из списка избранного" });
+          } else {
+            message.success({ content: "Успешно добавлено в избранного" });
+          }
           toggleFavoriteCard(card);
         }}
         className="group/heart absolute top-4 right-4 z-[1]"
@@ -52,10 +61,15 @@ const Card = ({ card }: Props) => {
             {card?.price?.toLocaleString("ru-RU")}$
           </div>
           <div
-            className="cart-basket"
+            className={`cart-basket ${inBasket && "active"}`}
             onClick={(e) => {
               e.preventDefault();
-              toggleBasketCard(card);
+              if (inBasket) {
+                message.success({ content: "Успешно добавлено в корзину" });
+              } else {
+                message.info({ content: "Успешно удалено" });
+              }
+              toggleBasketCard(card, 1);
             }}
           >
             <img src={ASSETS.cartBasket} alt="" />

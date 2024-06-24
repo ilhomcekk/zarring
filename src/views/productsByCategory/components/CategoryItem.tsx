@@ -7,11 +7,12 @@ interface Props {
   title?: string | null;
   id?: string | number;
   withArrow?: boolean;
+  className?: string;
 }
 
-const CategoryItem = ({ active, withArrow, title, id }: Props) => {
+const CategoryItem = ({ active, withArrow, title, id, className }: Props) => {
   return (
-    <div className="inline w-max max-w-full">
+    <div className={`inline w-max max-w-full ${className}`}>
       <Link
         className={`${
           active && "bg-[#f4f5f5]"

@@ -1,4 +1,4 @@
-import { BasketCard, BreadCrumb, Title } from "../../components";
+import { BasketCard, BreadCrumb, NoResults, Title } from "../../components";
 import { modalsStore, productsStore } from "../../store";
 import OrderModal from "./components/OrderModal";
 
@@ -6,7 +6,9 @@ const Basket = () => {
   const { basketCards } = productsStore();
   const { openModal } = modalsStore();
   let totalPrice = 0;
-  basketCards?.forEach((item) => (totalPrice += item?.price));
+  basketCards?.forEach(
+    (item) => (totalPrice += item?.price * (item?.count ? item?.count : 1))
+  );
   return (
     <>
       <div className="wrapper">
@@ -25,6 +27,9 @@ const Basket = () => {
         </div>
         <div className="flex max-xl:flex-col gap-6 mt-6">
           <div className="flex flex-col md:gap-4 gap-6 xl:min-w-[65%] xl:w-[65%]">
+            {basketCards?.length < 1 && (
+              <NoResults className="mt-12" text="Ваша корзина пусто" />
+            )}
             {basketCards?.map((item, idx) => (
               <BasketCard card={item} key={idx} />
             ))}

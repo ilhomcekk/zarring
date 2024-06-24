@@ -12,7 +12,6 @@ const ProductsByCategory = () => {
     productsByCategory,
     productsByCategoryLoading,
   } = productsStore();
-  console.log(productsByCategory, "productsByCategory");
 
   useEffect(() => {
     if (id) {
@@ -34,13 +33,24 @@ const ProductsByCategory = () => {
             <div className="text-[18px] mb-2">Категории</div>
             <div className="flex flex-col gap-[2px]">
               {list?.map((item, idx) => (
-                <CategoryItem
-                  id={item.id}
-                  title={item?.title}
-                  withArrow
-                  active={item?.id === Number(id)}
-                  key={idx}
-                />
+                <>
+                  <CategoryItem
+                    id={item.id}
+                    title={item?.title}
+                    withArrow
+                    active={item?.id === Number(id)}
+                    key={idx}
+                  />
+                  {item?.subcategories?.map((sub, i) => (
+                    <CategoryItem
+                      id={sub?.id}
+                      title={sub?.title}
+                      active={sub?.id === Number(id)}
+                      className="pl-2"
+                      key={i}
+                    />
+                  ))}
+                </>
               ))}
             </div>
           </div>

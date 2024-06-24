@@ -9,7 +9,7 @@ interface Props {
 const SubMenuItem = ({ items }: Props) => {
   return items?.id ? (
     <div className="mt-[20px]">
-      {items?.subcategory?.map((item, idx) => (
+      {items?.subcategories?.map((item, idx) => (
         <Link
           to={APP_ROUTES.CATEGORY + `/${item?.id}`}
           className="block font-500 text-[#27282a] text-[0.8rem] hover:text-[#E63737] mb-[9px]"

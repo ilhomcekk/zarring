@@ -6,6 +6,7 @@ import SubMenuItem from "./SubMenuItem";
 import MobileItem from "./MobileItem";
 import MobileMenu from "./MobileMenu";
 import Navigation from "./Navigation";
+import SocialSidebar from "./SocialSidebar";
 
 export {
   Search,
@@ -16,4 +17,5 @@ export {
   MobileItem,
   MobileMenu,
   Navigation,
+  SocialSidebar
 };

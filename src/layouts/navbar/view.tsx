@@ -7,6 +7,7 @@ import {
   MobileMenu,
   Navigation,
   Search,
+  SocialSidebar,
 } from "./components";
 import Categories from "./components/Categories";
 import { APP_ROUTES } from "../../router";
@@ -96,6 +97,7 @@ const Navbar = () => {
       <MobileMenu />
       <Navigation />
       <Categories />
+      <SocialSidebar />
     </>
   );
 };

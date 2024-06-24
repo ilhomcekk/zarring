@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ASSETS } from "../../../assets/images";
 import { useState } from "react";
 
 const Search = () => {
+  const navigate = useNavigate();
   const [query, setQuery] = useState("");
   return (
     <div className="mobile-search flex border border-border rounded-[4px] h-[40px]">
@@ -11,6 +12,11 @@ const Search = () => {
         className="xl:w-[550px] lg:w-[300px] placeholder:text-[#757575] text-[14px] px-4 rounded-[4px]"
         placeholder="Искать товары и категории"
         onChange={(e) => setQuery(e.target.value)}
+        onKeyPress={(e) => {
+          if (e.key === "Enter") {
+            navigate(`/search/${query}`);
+          }
+        }}
       />
       <Link
         to={`/search/${query}`}

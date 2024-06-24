@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { ASSETS } from "../../assets/images";
 import "./footer.scss";
 
@@ -46,7 +45,7 @@ const Footer = () => {
                 Telegram
               </a>
             </div>
-            <div className="flex flex-col gap-2">
+            {/* <div className="flex flex-col gap-2">
               <Link to={""} className="footer-link">
                 <img src={ASSETS.arrowWhite} alt="" />
                 Оплата и доставка
@@ -78,15 +77,17 @@ const Footer = () => {
                 <img src={ASSETS.arrowWhite} alt="" />
                 Контакты
               </Link>
-            </div>
+            </div> */}
             <div className="flex flex-col">
               <div className="footer-link">Телефон/телеграм:</div>
-              <div className="text-[21px] text-white max-md:my-4">+998 88 144-05-44</div>
-              <div className="mt-auto text-white font-[700]">
+              <div className="text-[21px] text-white max-md:my-4">
+                +998 88 144-05-44
+              </div>
+              {/* <div className="mt-auto text-white font-[700]">
                 Доставка по городу Ташкент производится в течение 2 часов с
                 момента подтверждения заказа покупателем. Доставка по регионам
                 производится в течение 2 дней.
-              </div>
+              </div> */}
               <div className="footer-link mt-6">
                 Пункт самовывоза: ул. Амира Темура 42, Ташкент График работы:
                 Понедельник-Суббота с 9:00 до 19:00

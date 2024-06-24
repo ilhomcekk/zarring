@@ -1,19 +1,13 @@
 import { Tabs, TabsProps } from "antd";
+import { productsStore } from "../../../store";
 
 const TabsDetail = () => {
+  const { detail } = productsStore();
   const items: TabsProps["items"] = [
     {
       key: "1",
       label: "Описание товара",
-      children: (
-        <div>
-          Серебряное кольцо с алмазом — это изысканное и элегантное украшение,
-          которое привлекает взгляд своим блеском и изысканностью. Основой
-          кольца служит благородное серебро, которое создает основу для камня.
-          Центральным элементом украшения является алмаз, который воплощает в
-          себе красоту, сияние и роскошь.
-        </div>
-      ),
+      children: <div>{detail?.discription}</div>,
     },
   ];
 
