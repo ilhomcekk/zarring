@@ -124,9 +124,9 @@ const Detail = () => {
               className="button w-[300px] mt-auto"
               onClick={() => {
                 if (inBasket) {
-                  message.success({ content: t("successAddToBasket") });
-                } else {
                   message.info({ content: t("successRemoveFromBasket") });
+                } else {
+                  message.success({ content: t("successAddToBasket") });
                 }
                 toggleBasketCard(detail, count);
               }}
