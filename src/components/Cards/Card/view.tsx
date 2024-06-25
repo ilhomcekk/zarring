@@ -7,8 +7,9 @@ import { ProductType } from "../../../types";
 import { BASE_URL } from "../../../config";
 import { productsStore } from "../../../store";
 import { HeartFilled } from "@ant-design/icons";
-import { message } from "antd";
+import { message, notification } from "antd";
 import { useTranslation } from "react-i18next";
+import { AlertCard } from "..";
 
 interface Props {
   card: ProductType;
@@ -69,7 +70,13 @@ const Card = ({ card }: Props) => {
               if (inBasket) {
                 message.info({ content: t("successRemoveFromBasket") });
               } else {
-                message.success({ content: t("successAddToBasket") });
+                // message.success({ content: t("successAddToBasket") });
+                notification.open({
+                  message: <AlertCard card={card} />,
+                  placement: "top",
+                  showProgress: true,
+                  className: "alert-card",
+                });
               }
               toggleBasketCard(card, 1);
             }}

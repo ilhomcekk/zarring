@@ -116,12 +116,19 @@ const Detail = () => {
               onChangeValue={(e) => setCount(Number(e.target.value))}
               className="mt-2"
             />
+            {/* <div className="text-[18px] text-green font-[500] mt-2">
+              {count} {t("product")}:{" "}
+              {(count * detail?.price)?.toLocaleString("ru-RU")}$
+            </div> */}
             <div className="mt-6">{t("price")}:</div>
             <div className="mt-2 text-[43px] font-[500]">
-              {detail?.price?.toLocaleString("ru-RU")}$
+              {(count * detail?.price)?.toLocaleString("ru-RU")}$
+            </div>
+            <div className="mt-2 text-[18px] text-green">
+              {detail?.price?.toLocaleString("ru-RU")}$ - сумма единого товар
             </div>
             <div
-              className="button w-[300px] mt-auto"
+              className={`button ${inBasket && "!bg-red"} w-[300px] mt-auto`}
               onClick={() => {
                 if (inBasket) {
                   message.info({ content: t("successRemoveFromBasket") });
