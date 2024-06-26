@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { BreadCrumb, Counter, PageLoading } from "../../components";
 import { Autoplay, Navigation } from "swiper/modules";
-import { Image, message } from "antd";
+import { Image, message, notification } from "antd";
 import "./detail.scss";
 import { HeartIcon } from "../../utils/icons";
 import { TabsDetail } from "./components";
@@ -11,6 +11,8 @@ import { useEffect, useState } from "react";
 import { HeartFilled } from "@ant-design/icons";
 import { BASE_URL } from "../../config";
 import { useTranslation } from "react-i18next";
+import { AlertCard } from "../../components/Cards";
+import i18n from "../../../i18n";
 
 const Detail = () => {
   const { t } = useTranslation();
@@ -45,7 +47,10 @@ const Detail = () => {
             //   link: "1",
             // },
             {
-              name: detail?.title || "",
+              name:
+                `${
+                  i18n.language === "uz" ? detail?.title_ru : detail?.title_uz
+                }` || "",
             },
           ]}
         />
@@ -68,6 +73,16 @@ const Detail = () => {
                   alt=""
                 />
               </SwiperSlide>
+              {detail?.gallery?.map((item, idx) => (
+                <SwiperSlide key={idx}>
+                  <Image
+                    src={BASE_URL + item}
+                    className="w-full !h-full object-contain"
+                    rootClassName="w-full lg:h-[555px] md:h-[450px] h-[300px] rounded-[8px]"
+                    alt=""
+                  />
+                </SwiperSlide>
+              ))}
             </Swiper>
           </div>
           <div className="w-full flex flex-col">
@@ -92,16 +107,22 @@ const Detail = () => {
                 )}
               </div>
             </div>
-            <div className="text-[22px] mt-4">{detail?.title}</div>
+            <div className="text-[22px] mt-4">{`${
+              i18n.language === "uz" ? detail?.title_ru : detail?.title_uz
+            }`}</div>
             {/* <div className="mt-6 flex items-center gap-2 cursor-pointer">
               Доставка: <img src={ASSETS.info} alt="" />
             </div> */}
-            <div className="flex flex-col gap-3 mt-6 pt-3 border-t border-border">
-              <div>Кратко о товаре:</div>
-              <div>Размер: 120 / 210</div>
-              <div>Вес:</div>
-              <div>Проба:</div>
-            </div>
+            {detail?.characteristic?.length > 0 ? (
+              <div className="flex flex-col gap-3 mt-6 pt-3 border-t border-border">
+                <div>Кратко о товаре:</div>
+                {detail?.characteristic?.map((item, idx) => (
+                  <div key={idx}>
+                    {item.label}: {item.value}
+                  </div>
+                ))}
+              </div>
+            ) : null}
             <div className="mt-6">{t("amount")}:</div>
             <Counter
               onMinus={() => {
@@ -124,7 +145,7 @@ const Detail = () => {
             <div className="mt-2 text-[43px] font-[500]">
               {(count * detail?.price)?.toLocaleString("ru-RU")}$
             </div>
-            <div className="mt-2 text-[18px] text-green">
+            <div className="mt-2 text-[18px] text-green max-md:mb-2">
               {detail?.price?.toLocaleString("ru-RU")}$ - сумма единого товар
             </div>
             <div
@@ -133,7 +154,12 @@ const Detail = () => {
                 if (inBasket) {
                   message.info({ content: t("successRemoveFromBasket") });
                 } else {
-                  message.success({ content: t("successAddToBasket") });
+                  notification.open({
+                    message: <AlertCard card={detail} />,
+                    placement: "top",
+                    showProgress: true,
+                    className: "alert-card",
+                  });
                 }
                 toggleBasketCard(detail, count);
               }}
