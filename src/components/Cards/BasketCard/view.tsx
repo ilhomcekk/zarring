@@ -32,14 +32,16 @@ const BasketCard = ({ card }: Props) => {
           <div className="md:text-[22px] text-[14px] mb-2 max-md:w-[80%]">
             {card?.title}
           </div>
-          <div className="flex flex-col gap-2 max-md:hidden">
-            <div className="text-[#1F2026]">Кратко о товаре:</div>
-            <div className="text-[#1F2026]">Размер: 120 / 210</div>
-            <div className="text-[#1F2026]">Вес:</div>
-            <div className="text-[#1F2026]">Тип:</div>
-            <div className="text-[#1F2026]">Проба:</div>
-            <div className="text-[#1F2026]">Алмаз:</div>
-          </div>
+          {card?.characteristic?.length > 0 ? (
+            <div className="flex flex-col gap-2 max-md:hidden">
+              <div className="text-[#1F2026]">Кратко о товаре:</div>
+              {card?.characteristic?.map((item, idx) => (
+                <div className="text-[#1F2026]" key={idx}>
+                  {item.label}: {item.value}
+                </div>
+              ))}
+            </div>
+          ) : null}
         </div>
         <div className="md:ml-auto flex flex-col md:items-end justify-between md:min-w-[30%] md:w-[30%]">
           <div

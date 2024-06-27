@@ -3,15 +3,24 @@ import { BasketCard, BreadCrumb, NoResults, Title } from "../../components";
 import { modalsStore, productsStore } from "../../store";
 import OrderModal from "./components/OrderModal";
 import OrderSuccessModal from "./components/OrderSuccessModal";
+import { useEffect } from "react";
 
 const Basket = () => {
   const { t } = useTranslation();
-  const { basketCards } = productsStore();
+  const { basketCards, getProductsByIds } = productsStore();
   const { openModal } = modalsStore();
   let totalPrice = 0;
   basketCards?.forEach(
     (item) => (totalPrice += item?.price * (item?.count ? item?.count : 1))
   );
+  let products = basketCards?.map((item) => ({
+    count: item?.count,
+    id: item?.id,
+  }));
+
+  useEffect(() => {
+    getProductsByIds({ productIds: products });
+  }, []);
   return (
     <>
       <div className="wrapper">

@@ -6,6 +6,8 @@ type StateAction = {
   getList: (params: any) => Promise<any>;
   list: {};
   listLoading: boolean;
+  getProductsByIds: (params: any) => Promise<any>;
+  productsByIdsLoading: boolean;
   getDetail: (id: string) => Promise<any>;
   detail: ProductType;
   detailLoading: boolean;
@@ -37,6 +39,8 @@ const initialState: StateAction = {
   getList: async () => {},
   list: {},
   listLoading: false,
+  getProductsByIds: async () => {},
+  productsByIdsLoading: false,
   getDetail: async () => {},
   detail: {} as any,
   detailLoading: false,
@@ -67,6 +71,19 @@ const productsStore = create<StateAction>((set) => ({
       return err;
     } finally {
       set({ listLoading: false });
+    }
+  },
+  getProductsByIds: async (params) => {
+    set({ productsByIdsLoading: true });
+    try {
+      const { data } = await requests.fetchProductsByIds(params);
+      set({ list: data?.data });
+      setBasketCards(data?.data);
+      return data;
+    } catch (err) {
+      return err;
+    } finally {
+      set({ productsByIdsLoading: false });
     }
   },
   getDetail: async (id) => {
