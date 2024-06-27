@@ -55,7 +55,7 @@ export const findCategoryById = (categories: any, id: any) => {
 export const findMoneyType = (type: string) => {
   let v = "uzs";
   if (type === "uzs") {
-    v = "Сум";
+    v = "сум";
   } else {
     v = "$";
   }

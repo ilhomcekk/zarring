@@ -74,16 +74,17 @@ const Detail = () => {
                   alt=""
                 />
               </SwiperSlide>
-              {detail?.gallery?.map((item, idx) => (
-                <SwiperSlide key={idx}>
-                  <Image
-                    src={BASE_URL + item}
-                    className="w-full !h-full object-contain"
-                    rootClassName="w-full lg:h-[555px] md:h-[450px] h-[300px] rounded-[8px]"
-                    alt=""
-                  />
-                </SwiperSlide>
-              ))}
+              {Array.isArray(detail?.gallery) &&
+                detail?.gallery?.map((item, idx) => (
+                  <SwiperSlide key={idx}>
+                    <Image
+                      src={BASE_URL + item}
+                      className="w-full !h-full object-contain"
+                      rootClassName="w-full lg:h-[555px] md:h-[450px] h-[300px] rounded-[8px]"
+                      alt=""
+                    />
+                  </SwiperSlide>
+                ))}
             </Swiper>
           </div>
           <div className="w-full flex flex-col">

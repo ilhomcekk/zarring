@@ -18,9 +18,7 @@ const AlertCard = ({ card }: Props) => {
         alt=""
       />
       <div className="flex flex-col gap-2 pt-4">
-        <div className="text-[18px] font-[500]">{`${
-          i18n.language === "uz" ? card?.title_ru : card?.title_uz
-        }`}</div>
+        <div className="text-[18px] font-[500]">{card?.title}</div>
         <div className="text-[20px] font-[600] text-txtGray">
           {card?.price}
           {findMoneyType(card?.money_type)}
