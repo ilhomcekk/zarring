@@ -7,6 +7,7 @@ import { productsStore } from "../../../store";
 import { HiTrash } from "react-icons/hi2";
 import { message } from "antd";
 import { Link } from "react-router-dom";
+import { findMoneyType } from "../../../utils";
 
 interface Props {
   card: ProductType;
@@ -28,7 +29,9 @@ const BasketCard = ({ card }: Props) => {
       </Link>
       <div className="flex max-md:flex-col justify-between w-full">
         <div className="md:pt-4 flex flex-col md:gap-2 gap-1">
-          <div className="md:text-[22px] text-[14px] mb-2 max-md:w-[80%]">{card?.title}</div>
+          <div className="md:text-[22px] text-[14px] mb-2 max-md:w-[80%]">
+            {card?.title}
+          </div>
           <div className="flex flex-col gap-2 max-md:hidden">
             <div className="text-[#1F2026]">Кратко о товаре:</div>
             <div className="text-[#1F2026]">Размер: 120 / 210</div>
@@ -52,7 +55,8 @@ const BasketCard = ({ card }: Props) => {
             </span>
           </div>
           <div className="md:text-[50px] text-[20px] font-[500] whitespace-nowrap">
-            {card?.price?.toLocaleString("ru-RU")}$
+            {card?.price?.toLocaleString("ru-RU")}
+            {findMoneyType(card?.money_type)}
           </div>
           <Counter
             onMinus={() => {

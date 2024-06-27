@@ -4,7 +4,7 @@ import { $api } from "./api";
 export const requests = {
   // PRODUCTS
   fetchProduct: (params: any) => $api.get(`${API_URL}/product/`, { params }),
-  fetchDetailProduct: (id: string) => $api.get(`${API_URL}/product/by/${id}`),
+  fetchDetailProduct: (id: string) => $api.get(`${API_URL}/product/byId/${id}`),
   fetchProductsByCategory: (id: string, params: any) =>
     $api.get(`${API_URL}/product/bycategoryid/${id}`, { params }),
   fetchProductSearch: (params: any) =>

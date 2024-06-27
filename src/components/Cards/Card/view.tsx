@@ -10,6 +10,7 @@ import { HeartFilled } from "@ant-design/icons";
 import { message, notification } from "antd";
 import { useTranslation } from "react-i18next";
 import { AlertCard } from "..";
+import { findMoneyType } from "../../../utils";
 
 interface Props {
   card: ProductType;
@@ -61,7 +62,7 @@ const Card = ({ card }: Props) => {
         </div>
         <div className="flex items-center justify-between mt-4">
           <div className="md:text-[33px] text-[24px] font-[500]">
-            {card?.price?.toLocaleString("ru-RU")}$
+            {card?.price?.toLocaleString("ru-RU")}{findMoneyType(card?.money_type)}
           </div>
           <button
             className={`cart-basket ${inBasket && "active"}`}

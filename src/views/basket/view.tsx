@@ -49,13 +49,13 @@ const Basket = () => {
                 {t("products")} ({basketCards?.length}):
               </div>
               <div className="md:text-[22px] text-[17px]">
-                {totalPrice?.toLocaleString("ru-RU")}$
+                {totalPrice?.toLocaleString("ru-RU")}
               </div>
             </div>
             <div className="md:mt-6 mt-4 md:pt-6 pt-4 border-t flex items-center justify-between">
               <div className="md:text-[22px] text-[17px]">{t("total")}:</div>
               <div className="md:text-[22px] text-[17px]">
-                {totalPrice?.toLocaleString("ru-RU")}$
+                {totalPrice?.toLocaleString("ru-RU")}
               </div>
             </div>
             <div

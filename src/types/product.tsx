@@ -4,6 +4,7 @@ export type ProductType = {
   title_ru: string | null;
   title_uz: string | null;
   price: number;
+  money_type: string;
   discription: string | null;
   img: string | null;
   count: number | null;

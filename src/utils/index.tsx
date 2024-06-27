@@ -51,3 +51,13 @@ export const findCategoryById = (categories: any, id: any) => {
   }
   return null;
 };
+
+export const findMoneyType = (type: string) => {
+  let v = "uzs";
+  if (type === "uzs") {
+    v = "Сум";
+  } else {
+    v = "$";
+  }
+  return v;
+};

@@ -2,6 +2,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { ProductType } from "../../../types";
 import { BASE_URL } from "../../../config";
 import i18n from "../../../../i18n";
+import { findMoneyType } from "../../../utils";
 
 interface Props {
   card: ProductType;
@@ -21,7 +22,8 @@ const AlertCard = ({ card }: Props) => {
           i18n.language === "uz" ? card?.title_ru : card?.title_uz
         }`}</div>
         <div className="text-[20px] font-[600] text-txtGray">
-          {card?.price}$
+          {card?.price}
+          {findMoneyType(card?.money_type)}
         </div>
       </div>
       {/* <div className="ml-auto">
