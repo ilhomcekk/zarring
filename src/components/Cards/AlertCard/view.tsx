@@ -1,7 +1,6 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { ProductType } from "../../../types";
 import { BASE_URL } from "../../../config";
-import i18n from "../../../../i18n";
 import { findMoneyType } from "../../../utils";
 
 interface Props {
