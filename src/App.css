@@ -19,3 +19,9 @@ input[type="number"] {
 .ant-image-mask-info {
   display: none;
 }
+
+* {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
