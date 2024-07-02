@@ -15,7 +15,7 @@ const OrderModal = () => {
       const values = form.getFieldsValue();
       values["products"] = basketCards;
       create(values).then((res) => {
-        if (res?.id) {
+        if (res?.data?.id) {
           message.success({
             content: "Ваш заказ принят! Мы вам перезвоним",
           });
