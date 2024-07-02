@@ -15,3 +15,7 @@ input[type="number"] {
 .ant-message-notice-content {
   padding: 1rem !important;
 }
+
+.ant-image-mask-info {
+  display: none;
+}

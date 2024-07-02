@@ -99,12 +99,12 @@ const Detail = () => {
                 {favorites?.find((item) => item?.id === detail?.id) ? (
                   <>
                     <HeartFilled className="[&>svg]:fill-red [&>svg]:text-[21px]" />
-                    {t("intoDesire")}
+                    {t("intoDesires")}
                   </>
                 ) : (
                   <>
                     <HeartIcon />
-                    {t("intoDesires")}
+                    {t("intoDesire")}
                   </>
                 )}
               </div>
