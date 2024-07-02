@@ -6,7 +6,9 @@ const Home = () => {
   return (
     <div className="wrapper">
       <Banner />
-      <Products categoryId="1" className="md:mt-[50px] mt-[25px]" />
+      <Products categoryId="2" className="md:mt-[50px] mt-[25px]" />
+      <Products categoryId="3" className="md:mt-[50px] mt-[25px]" />
+      <Products categoryId="4" className="md:mt-[50px] mt-[25px]" />
       <Brands className="md:mt-[50px] mt-[35px] max-md:mb-4" />
       <Title
         title={t("whatCanOffer")}
