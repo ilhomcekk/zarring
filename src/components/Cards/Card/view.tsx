@@ -62,8 +62,8 @@ const Card = ({ card }: Props) => {
         </div>
         <div className="flex items-center justify-between mt-4">
           <div className="md:text-[33px] text-[24px] font-[500]">
-            {card?.price?.toLocaleString("ru-RU")}
-            {findMoneyType(card?.money_type)}
+            {card?.price ? card?.price?.toLocaleString("ru-RU") : ""}
+            {card?.price ? findMoneyType(card?.money_type) : null}
           </div>
           <button
             className={`cart-basket ${inBasket && "active"}`}
