@@ -54,7 +54,7 @@ const Card = ({ card }: Props) => {
         alt=""
       />
       <div className="p-[12px]">
-        <div className="md:text-[19px] text-[14px] text-[#1F2026] border-b border-[#EEEEEE] pb-1 leading-none">
+        <div className="line-clamp-2 md:h-[42.5px] h-[32.5px] md:text-[19px] text-[14px] text-[#1F2026] border-b border-[#EEEEEE] pb-1 leading-none">
           {card?.title}
         </div>
         <div className="line-clamp-3 text-txtGray text-[11px] leading-none mt-1 h-[33px]">
@@ -62,7 +62,8 @@ const Card = ({ card }: Props) => {
         </div>
         <div className="flex items-center justify-between mt-4">
           <div className="md:text-[33px] text-[24px] font-[500]">
-            {card?.price?.toLocaleString("ru-RU")}{findMoneyType(card?.money_type)}
+            {card?.price?.toLocaleString("ru-RU")}
+            {findMoneyType(card?.money_type)}
           </div>
           <button
             className={`cart-basket ${inBasket && "active"}`}
