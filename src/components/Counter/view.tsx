@@ -22,19 +22,19 @@ const Counter = ({
     >
       <div
         onClick={onMinus}
-        className="min-w-[40px] w-[40px] h-full flex items-center justify-center hover:bg-light cursor-pointer rounded-[4px]"
+        className="max-md:bg-white min-w-[40px] w-[40px] h-full flex items-center justify-center md:hover:bg-light cursor-pointer rounded-[4px]"
       >
         <img src={ASSETS.minus} alt="" />
       </div>
       <input
         type="number"
-        className="w-full text-center h-full flex items-center justify-center"
+        className="md:bg-white md:bg-transparent w-full text-center h-full flex items-center justify-center dark-theme-color"
         onChange={onChangeValue}
         value={value}
       />
       <div
         onClick={onPlus}
-        className="min-w-[40px] w-[40px] h-full flex items-center justify-center hover:bg-light cursor-pointer rounded-[4px]"
+        className="max-md:bg-white min-w-[40px] w-[40px] h-full flex items-center justify-center md:hover:bg-light cursor-pointer rounded-[4px]"
       >
         <img src={ASSETS.plus} alt="" />
       </div>

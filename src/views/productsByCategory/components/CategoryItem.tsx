@@ -15,7 +15,7 @@ const CategoryItem = ({ active, withArrow, title, id, className }: Props) => {
     <div className={`inline w-max max-w-full ${className}`}>
       <Link
         className={`${
-          active && "bg-[#f4f5f5]"
+          active && "bg-[#f4f5f5] dark-theme-color"
         } flex items-center gap-[2px] leading-[1.25] font-500 text-sm text-[#212121] hover:bg-[#f4f5f5] duration-200 rounded-[4px] px-[6px] py-[8px]`}
         to={APP_ROUTES.CATEGORY + `/${id}`}
       >

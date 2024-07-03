@@ -25,7 +25,7 @@ const Title = ({ className, title, link }: Props) => {
     >
       {title}
       {link ? (
-        <Link to={link} className="flex items-center gap-2 hover:underline">
+        <Link to={link} className="flex items-center gap-2 hover:underline dark-theme-color">
           {t("showAll")}{" "}
           <svg
             stroke="currentColor"

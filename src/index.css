@@ -19,3 +19,7 @@
 .dark * {
   color: #fff !important;
 }
+
+.dark .dark-theme-color {
+  color: #000 !important;
+}

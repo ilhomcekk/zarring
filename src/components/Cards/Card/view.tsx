@@ -54,14 +54,14 @@ const Card = ({ card }: Props) => {
         alt=""
       />
       <div className="p-[12px]">
-        <div className="line-clamp-2 md:h-[42.5px] h-[32.5px] md:text-[19px] text-[14px] text-[#1F2026] border-b border-[#EEEEEE] pb-1 leading-none">
+        <div className="dark-theme-color line-clamp-2 md:h-[42.5px] h-[32.5px] md:text-[19px] text-[14px] text-[#1F2026] border-b border-[#EEEEEE] pb-1 leading-none">
           {card?.title}
         </div>
-        <div className="line-clamp-3 text-txtGray text-[11px] leading-none mt-1 h-[33px]">
+        <div className="dark-theme-color line-clamp-3 text-txtGray text-[11px] leading-none mt-1 h-[33px]">
           {card?.discription}
         </div>
         <div className="flex items-center justify-between mt-4">
-          <div className="md:text-[33px] text-[24px] font-[500]">
+          <div className="md:text-[33px] text-[24px] font-[500] dark-theme-color">
             {card?.price ? card?.price?.toLocaleString("ru-RU") : ""}
             {card?.price ? findMoneyType(card?.money_type) : null}
           </div>
