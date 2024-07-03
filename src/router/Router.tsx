@@ -3,21 +3,39 @@ import { _routes } from "./_routes";
 import "react-lazy-load-image-component/src/effects/opacity.css";
 import PrivateRoute from "./PrivateRoute";
 import { Footer, Navbar } from "../layouts";
+import { useEffect, useState } from "react";
 
 const Router = () => {
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    // @ts-ignore
+    const tg = window.Telegram.WebApp;
+    setTheme(tg.colorScheme);
+
+    tg.onEvent("themeChanged", () => {
+      setTheme(tg.colorScheme);
+    });
+
+    return () => {
+      tg.offEvent("themeChanged");
+    };
+  }, []);
   return (
     <HashRouter>
-      <Navbar />
-      <Routes>
-        {_routes?.map(({ path, element: Component }, idx) => (
-          <Route
-            key={idx}
-            path={path}
-            element={<PrivateRoute child={<Component />} />}
-          />
-        ))}
-      </Routes>
-      <Footer />
+      <div className={theme}>
+        <Navbar />
+        <Routes>
+          {_routes?.map(({ path, element: Component }, idx) => (
+            <Route
+              key={idx}
+              path={path}
+              element={<PrivateRoute child={<Component />} />}
+            />
+          ))}
+        </Routes>
+        <Footer />
+      </div>
     </HashRouter>
   );
 };

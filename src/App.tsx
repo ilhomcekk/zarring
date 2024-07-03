@@ -16,7 +16,6 @@ function App() {
           token: {
             colorPrimary: "#082567",
           },
-          components: {Modal: {}}
         }}
       >
         <Router />
