@@ -3,7 +3,7 @@ import { _routes } from "./_routes";
 import "react-lazy-load-image-component/src/effects/opacity.css";
 import PrivateRoute from "./PrivateRoute";
 import { Footer, Navbar } from "../layouts";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const Router = () => {
   useEffect(() => {
