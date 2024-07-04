@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background: #fff;
+}
+
+body .dark {
+  background: #fff !important;
+}
+
 * {
   font-family: "Inter";
   font-weight: 400;
@@ -14,10 +22,6 @@
   margin-left: auto;
   margin-right: auto;
   padding: 0 15px;
-}
-
-.dark * {
-  color: #fff !important;
 }
 
 .dark .dark-theme-color {
