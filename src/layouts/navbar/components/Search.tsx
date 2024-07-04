@@ -22,7 +22,7 @@ const Search = () => {
       />
       <Link
         to={`/search/${query}`}
-        className="flex items-center justify-center min-w-[75px] w-[75px] md:rounded-r-[4px] rounded-r-full bg-[#F2F4F7] hover:bg-[#e3e5e7] cursor-pointer"
+        className="flex items-center justify-center md:min-w-[75px] md:w-[75px] max-md:pr-4 md:rounded-r-[4px] rounded-r-full bg-[#F2F4F7] hover:bg-[#e3e5e7] cursor-pointer"
       >
         <img src={ASSETS.search} className="min-w-[16px] w-[16px]" alt="" />
       </Link>

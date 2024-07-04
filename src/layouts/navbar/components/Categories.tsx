@@ -1,6 +1,6 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { ASSETS } from "../../../assets/images";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { APP_ROUTES } from "../../../router";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -12,6 +12,7 @@ import { useTranslation } from "react-i18next";
 const Categories = () => {
   const { t } = useTranslation();
   const { list, getList, listLoading } = categoryStore();
+  const { pathname } = useLocation();
   useEffect(() => {
     getList({ page: 1, pageSize: 20 });
   }, []);
@@ -21,10 +22,10 @@ const Categories = () => {
         className="mb-6 max-md:mt-[3rem]"
         speed={1500}
         spaceBetween={5}
-        // autoplay={{
-        //   delay: 2500,
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
         modules={[Autoplay]}
         breakpoints={{
           1200: {
@@ -35,6 +36,9 @@ const Categories = () => {
           },
           767: {
             slidesPerView: 6,
+          },
+          0: {
+            slidesPerView: 3,
           },
         }}
       >
@@ -52,7 +56,9 @@ const Categories = () => {
             <SwiperSlide>
               <Link
                 to={APP_ROUTES.HOME}
-                className="flex items-center gap-2 font-[600] text-[12.8px]"
+                className={`flex items-center gap-2 font-[600] text-[12.8px] ${
+                  pathname !== APP_ROUTES.HOME && "text-linkGray"
+                }`}
               >
                 <LazyLoadImage
                   src={ASSETS.union}

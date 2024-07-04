@@ -17,7 +17,7 @@ const Footer = () => {
             <div className="flex flex-col gap-6 py-6">
               <a
                 href=""
-                className="flex items-center gap-3 text-[13px] text-white"
+                className="flex items-center gap-3 text-[13px] text-white hover:!text-[#4B94FF]"
               >
                 <img
                   className="min-w-[20px] w-[20px]"
@@ -28,7 +28,7 @@ const Footer = () => {
               </a>
               <a
                 href=""
-                className="flex items-center gap-3 text-[13px] text-white"
+                className="flex items-center gap-3 text-[13px] text-white hover:!text-[#4B94FF]"
               >
                 <img
                   className="min-w-[20px] w-[20px]"
@@ -39,7 +39,7 @@ const Footer = () => {
               </a>
               <a
                 href=""
-                className="flex items-center gap-3 text-[13px] text-white"
+                className="flex items-center gap-3 text-[13px] text-white hover:!text-[#4B94FF]"
               >
                 <img
                   className="min-w-[20px] w-[20px]"

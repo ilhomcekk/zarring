@@ -26,13 +26,11 @@ const Banner = () => {
       // }}
       className="swiper-arrow rounded-[12px]"
       loop
-      // speed={1500}
-      // autoplay={
-      //   {
-      //     delay: 2500,
-      //     disableOnInteraction: false,
-      //   }
-      // }
+      speed={1500}
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+      }}
       modules={[Navigation, Pagination, Autoplay]}
       breakpoints={{
         640: {
