@@ -6,16 +6,12 @@ import { Footer, Navbar } from "../layouts";
 import { useEffect, useState } from "react";
 
 const Router = () => {
-  const [theme, setTheme] = useState("light");
-
   useEffect(() => {
     // @ts-ignore
     const tg = window.Telegram.WebApp;
-    setTheme(tg.colorScheme);
-
-    tg.onEvent("themeChanged", () => {
-      setTheme(tg.colorScheme);
-    });
+    tg.ready();
+    document.documentElement.style.setProperty("--background-color", "white");
+    document.documentElement.style.setProperty("--text-color", "black");
 
     return () => {
       tg.offEvent("themeChanged");
@@ -23,7 +19,7 @@ const Router = () => {
   }, []);
   return (
     <HashRouter>
-      <div className={theme}>
+      <div>
         <Navbar />
         <Routes>
           {_routes?.map(({ path, element: Component }, idx) => (

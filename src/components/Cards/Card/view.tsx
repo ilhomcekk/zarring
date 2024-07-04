@@ -25,7 +25,7 @@ const Card = ({ card }: Props) => {
   return (
     <Link
       to={`/product/${card.id}`}
-      className={`group relative shadow-card hover:shadow-sm duration-200
+      className={`group relative shadow-card md:hover:shadow-sm duration-200
        rounded-[8px] bg-white`}
     >
       <button
