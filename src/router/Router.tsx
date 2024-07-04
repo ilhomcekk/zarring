@@ -16,11 +16,13 @@ const Router = () => {
     tg.onEvent("themeChanged", () => {
       setTheme(tg.colorScheme);
     });
+    tg.offEvent("themeChanged");
 
     return () => {
       tg.offEvent("themeChanged");
     };
   }, []);
+
   return (
     <HashRouter>
       <div className={theme}>
