@@ -1,14 +1,24 @@
 import { useTranslation } from "react-i18next";
 import { Banner, Brands, Products, Title } from "../../components";
+import { useEffect, useState } from "react";
+import { categoryStore } from "../../store";
 
 const Home = () => {
   const { t } = useTranslation();
+  const { list, listLoading } = categoryStore();
+  const [ids, setIds] = useState<number[] | string[]>([]);
+  useEffect(() => {
+    if (!listLoading) {
+      setIds(() => list.map((item) => String(item.id)));
+    }
+  }, [listLoading]);
+
   return (
     <div className="wrapper">
       <Banner />
-      <Products categoryId="2" className="md:mt-[50px] mt-[25px]" />
-      <Products categoryId="3" className="md:mt-[50px] mt-[25px]" />
-      <Products categoryId="4" className="md:mt-[50px] mt-[25px]" />
+      {ids?.slice(0, 5)?.map((num) => (
+        <Products categoryId={String(num)} className="md:mt-[50px] mt-[25px]" />
+      ))}
       <Brands className="md:mt-[50px] mt-[35px] max-md:mb-4" />
       <Title
         title={t("whatCanOffer")}
