@@ -13,6 +13,8 @@ const Categories = () => {
   const { t } = useTranslation();
   const { list, getList, listLoading } = categoryStore();
   const { pathname } = useLocation();
+  const activeCategory = pathname?.substring(pathname?.lastIndexOf("/") + 1);
+
   useEffect(() => {
     getList({ page: 1, pageSize: 20 });
   }, []);
@@ -21,26 +23,27 @@ const Categories = () => {
       <Swiper
         className="mb-6 max-md:mt-[3rem]"
         speed={1500}
-        spaceBetween={5}
+        spaceBetween={30}
+        slidesPerView={"auto"}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
         }}
         modules={[Autoplay]}
-        breakpoints={{
-          1200: {
-            slidesPerView: 12,
-          },
-          1000: {
-            slidesPerView: 8,
-          },
-          767: {
-            slidesPerView: 6,
-          },
-          0: {
-            slidesPerView: 3,
-          },
-        }}
+        // breakpoints={{
+        //   1200: {
+        //     slidesPerView: "auto",
+        //   },
+        //   1000: {
+        //     slidesPerView: 8,
+        //   },
+        //   767: {
+        //     slidesPerView: 6,
+        //   },
+        //   0: {
+        //     slidesPerView: 3,
+        //   },
+        // }}
       >
         {listLoading ? (
           [...Array(12)].map((_, idx) => (
@@ -53,7 +56,7 @@ const Categories = () => {
           ))
         ) : (
           <>
-            <SwiperSlide>
+            <SwiperSlide className="flex-[1]">
               <Link
                 to={APP_ROUTES.HOME}
                 className={`flex items-center gap-2 font-[600] text-[12.8px] ${
@@ -71,10 +74,12 @@ const Categories = () => {
               </Link>
             </SwiperSlide>
             {list?.map((item, idx) => (
-              <SwiperSlide key={idx}>
+              <SwiperSlide key={idx} className="flex-[1]">
                 <Link
                   to={APP_ROUTES.CATEGORY + `/${item.id}`}
-                  className="anim-text whitespace-nowrap text-[12.8px] text-linkGray hover:text-black"
+                  className={`anim-text ${
+                    activeCategory === String(item?.id) && "active"
+                  } whitespace-nowrap text-[12.8px] text-linkGray hover:text-black`}
                 >
                   <span>{item?.title}</span>
                 </Link>
