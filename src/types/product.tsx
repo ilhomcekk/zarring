@@ -6,6 +6,8 @@ export type ProductType = {
   price: number;
   money_type: string;
   discription: string | null;
+  description_ru: string | null;
+  description_uz: string | null;
   img: string | null;
   count: number | null;
   characteristic: {

@@ -7,7 +7,7 @@ const TabsDetail = () => {
     {
       key: "1",
       label: "Описание товара",
-      children: <div>{detail?.discription}</div>,
+      children: <div>{detail?.description_ru}</div>,
     },
   ];
 
