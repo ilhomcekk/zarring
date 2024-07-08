@@ -4,6 +4,7 @@ import { Skeleton } from "antd";
 import { CategoryItem } from "../productsByCategory/components";
 import { Title } from "../../components";
 import { useTranslation } from "react-i18next";
+import Item from "./components/item";
 
 const Catalog = () => {
   const { t } = useTranslation();
@@ -26,18 +27,11 @@ const Catalog = () => {
               />
             ))
           ) : (
-            <div className="flex flex-col gap-2">
-              <Title className="mb-2" title={t("catalog")} />
+            <div className="flex flex-col">
+              <Title className="mb-4" title={t("catalog")} />
               {list
                 ?.map((item, idx) => (
-                  <CategoryItem
-                    className="!w-full"
-                    withArrow
-                    title={item?.title}
-                    active={true}
-                    id={item?.id}
-                    key={idx}
-                  />
+                  <Item className="!w-full" item={item} key={idx} />
                 ))
                 ?.reverse()}
             </div>
