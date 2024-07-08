@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { categoryStore } from "../../store";
 import { Skeleton } from "antd";
-import { CategoryItem } from "../productsByCategory/components";
 import { Title } from "../../components";
 import { useTranslation } from "react-i18next";
 import Item from "./components/item";

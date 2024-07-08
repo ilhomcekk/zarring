@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { _routes } from "./_routes";
 import "react-lazy-load-image-component/src/effects/opacity.css";
 import PrivateRoute from "./PrivateRoute";
