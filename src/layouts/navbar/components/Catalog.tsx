@@ -22,13 +22,15 @@ const Catalog = () => {
         <div className="wrapper">
           <div className="menu-wrapper">
             <div className="categories-block pb-6 border-r border-[#76797f33]">
-              {list?.map((item, idx) => (
-                <MenuItem
-                  onMouseEnter={() => setCategory(item)}
-                  item={item}
-                  key={idx}
-                />
-              ))}
+              {list
+                ?.map((item, idx) => (
+                  <MenuItem
+                    onMouseEnter={() => setCategory(item)}
+                    item={item}
+                    key={idx}
+                  />
+                ))
+                ?.reverse()}
             </div>
             <div className="sub-categories-block pl-6">
               <Link

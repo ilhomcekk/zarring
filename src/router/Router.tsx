@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
 import { _routes } from "./_routes";
 import "react-lazy-load-image-component/src/effects/opacity.css";
 import PrivateRoute from "./PrivateRoute";
@@ -27,15 +27,17 @@ const Router = () => {
     <HashRouter>
       <div className={theme}>
         <Navbar />
-        <Routes>
-          {_routes?.map(({ path, element: Component }, idx) => (
-            <Route
-              key={idx}
-              path={path}
-              element={<PrivateRoute child={<Component />} />}
-            />
-          ))}
-        </Routes>
+        <div className="max-md:pt-12">
+          <Routes>
+            {_routes?.map(({ path, element: Component }, idx) => (
+              <Route
+                key={idx}
+                path={path}
+                element={<PrivateRoute child={<Component />} />}
+              />
+            ))}
+          </Routes>
+        </div>
         <Footer />
       </div>
     </HashRouter>

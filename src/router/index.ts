@@ -5,6 +5,7 @@ export const APP_ROUTES = {
   FAVORITES: "/favorites",
   SEARCH: "/search",
   CATEGORY: "/category",
+  CATALOG: "/catalog",
   POLITICS: "/politics",
   ABOUT: "/about",
   NOT_FOUND: "*",

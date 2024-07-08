@@ -7,5 +7,6 @@ import Search from "./search/view";
 import ProductsByCategory from "./productsByCategory/view";
 import Politics from './politics/view'
 import About from "./about/view";
+import Catalog from "./catalog/view";
 
-export { Home, NotFound, Detail, Basket, Favorites, Search, ProductsByCategory, Politics, About };
+export { Home, NotFound, Detail, Basket, Favorites, Search, ProductsByCategory, Politics, About, Catalog };

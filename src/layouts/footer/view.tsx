@@ -1,12 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ASSETS } from "../../assets/images";
 import "./footer.scss";
 import { APP_ROUTES } from "../../router";
 import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { pathname } = useLocation();
   const { t } = useTranslation();
-  return (
+  return pathname !== APP_ROUTES.CATALOG ? (
     <div
       className="bg-no-repeat bg-cover py-[40px] mt-[50px] max-md:pb-[100px]"
       style={{ backgroundImage: `url(${ASSETS.footerBg})` }}
@@ -113,7 +114,7 @@ const Footer = () => {
         </div>
       </div>
     </div>
-  );
+  ) : null;
 };
 
 export default Footer;

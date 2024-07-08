@@ -24,7 +24,7 @@ const Navigation = () => {
       id: 2,
       name: t("catalog"),
       Icon: CatalogIcon,
-      path: APP_ROUTES.NOT_FOUND,
+      path: APP_ROUTES.CATALOG,
     },
     {
       id: 3,

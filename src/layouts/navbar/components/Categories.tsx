@@ -19,7 +19,7 @@ const Categories = () => {
     getList({ page: 1, pageSize: 20 });
   }, []);
   return (
-    <div className="wrapper">
+    <div className="wrapper max-md:hidden">
       <Swiper
         className="mb-6 max-md:mt-[3rem]"
         speed={1500}
@@ -73,18 +73,20 @@ const Categories = () => {
                 {t("home")}
               </Link>
             </SwiperSlide>
-            {list?.map((item, idx) => (
-              <SwiperSlide key={idx} className="flex-[1]">
-                <Link
-                  to={APP_ROUTES.CATEGORY + `/${item.id}`}
-                  className={`anim-text ${
-                    activeCategory === String(item?.id) && "active"
-                  } whitespace-nowrap text-[12.8px] text-linkGray hover:text-black`}
-                >
-                  <span>{item?.title}</span>
-                </Link>
-              </SwiperSlide>
-            ))}
+            {list
+              ?.map((item, idx) => (
+                <SwiperSlide key={idx} className="flex-[1]">
+                  <Link
+                    to={APP_ROUTES.CATEGORY + `/${item.id}`}
+                    className={`anim-text ${
+                      activeCategory === String(item?.id) && "active"
+                    } whitespace-nowrap text-[12.8px] text-linkGray hover:text-black`}
+                  >
+                    <span>{item?.title}</span>
+                  </Link>
+                </SwiperSlide>
+              ))
+              ?.reverse()}
           </>
         )}
         {/* <div className="flex items-center gap-[30px] mb-6"> */}

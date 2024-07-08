@@ -8,7 +8,8 @@ import {
   ProductsByCategory,
   Search,
   Politics,
-  About
+  About,
+  Catalog
 } from "../views";
 
 export const _routes = [
@@ -32,6 +33,10 @@ export const _routes = [
   {
     path: APP_ROUTES.SEARCH + "/:slug",
     element: Search,
+  },
+  {
+    path: APP_ROUTES.CATALOG,
+    element: Catalog,
   },
   {
     path: APP_ROUTES.CATEGORY + "/:id",

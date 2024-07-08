@@ -12,11 +12,13 @@ const Home = () => {
       setIds(() => list.map((item) => String(item.id)));
     }
   }, [listLoading]);
+  const reversedArray = ids?.slice(0, 5)?.reverse();
+  console.log(reversedArray);
 
   return (
     <div className="wrapper">
       <Banner />
-      {ids?.slice(0, 5)?.map((num) => (
+      {reversedArray?.slice(0, 5)?.map((num) => (
         <Products categoryId={String(num)} className="md:mt-[50px] mt-[25px]" />
       ))}
       <Brands className="md:mt-[50px] mt-[35px] max-md:mb-4" />
