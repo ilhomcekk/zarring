@@ -18,7 +18,7 @@ const BreadCrumb = ({ items }: Props) => {
     <div className="flex items-center gap-[4px] mb-6">
       <div
         onClick={() => navigate(-1)}
-        className="breadcrumb flex items-center gap-1"
+        className="breadcrumb flex items-center gap-1 md:hidden"
       >
         <img src={ASSETS.arrowBlack} className="rotate-[180deg]" alt="" />
         {t("back")} /
