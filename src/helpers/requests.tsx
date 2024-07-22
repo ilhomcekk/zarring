@@ -12,7 +12,8 @@ export const requests = {
   fetchProductSearch: (params: any) =>
     $api.get(`${API_URL}/product/search/`, { params }),
   // CATEGORY
-  fetchCategory: (params: any) => $api.get(`${API_URL}/category`, { params }),
+  fetchCategory: (params: any) =>
+    $api.get(`${API_URL}/category/parent`, { params }),
   // BANNER
   fetchBanner: () => $api.get(`${API_URL}/banner`),
   // BRAND

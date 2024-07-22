@@ -19,7 +19,7 @@ const Basket = () => {
   }));
 
   useEffect(() => {
-    getProductsByIds({ productIds: products });
+    if (products?.length > 0) getProductsByIds({ productIds: products });
   }, []);
   return (
     <>
