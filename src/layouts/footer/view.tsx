@@ -17,7 +17,7 @@ const Footer = () => {
           <div className="bg-footer px-[30px] py-[20px] grid md:grid-cols-3 gap-4">
             <div className="flex flex-col gap-6 py-6">
               <a
-                href=""
+                href="https://www.facebook.com/zarringuz/"
                 className="flex items-center gap-3 text-[13px] text-white hover:!text-[#4B94FF]"
               >
                 <img
@@ -28,7 +28,7 @@ const Footer = () => {
                 Facebook
               </a>
               <a
-                href=""
+                href="https://www.instagram.com/zarring.uz/"
                 className="flex items-center gap-3 text-[13px] text-white hover:!text-[#4B94FF]"
               >
                 <img
@@ -39,7 +39,7 @@ const Footer = () => {
                 Instagram
               </a>
               <a
-                href=""
+                href="https://t.me/zarring_uz"
                 className="flex items-center gap-3 text-[13px] text-white hover:!text-[#4B94FF]"
               >
                 <img

@@ -12,7 +12,7 @@ import instagram from "./instagram.svg";
 import telegram from "./telegram.svg";
 import arrowWhite from "./arrow-white.svg";
 import arrowBlack from "./arrow-black.svg";
-import logo from "./logo.png";
+import logo from "./ZarringBlack.svg";
 import info from "./info.svg";
 import minus from "./minus.svg";
 import plus from "./plus.svg";

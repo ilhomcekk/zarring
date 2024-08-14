@@ -7,7 +7,7 @@ const SocialSidebar = () => {
     <nav className="social">
       <ul>
         <li className="facebook">
-          <a href="https://www.facebook.com/bmixuz">
+          <a href="https://www.facebook.com/zarringuz/">
             <div>
               <BiLogoFacebook />
             </div>
@@ -15,7 +15,7 @@ const SocialSidebar = () => {
           </a>
         </li>
         <li className="telegram">
-          <a href="https://t.me/bmixuz">
+          <a href="https://t.me/zarring_uz">
             <div>
               <FaTelegramPlane color="#000" />
             </div>
@@ -23,7 +23,7 @@ const SocialSidebar = () => {
           </a>
         </li>
         <li className="instagram">
-          <a href="https://www.instagram.com/bmix_uz">
+          <a href="https://www.instagram.com/zarring.uz/">
             <div>
               <AiFillInstagram />
             </div>
