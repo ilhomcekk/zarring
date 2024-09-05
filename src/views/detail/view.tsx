@@ -143,15 +143,21 @@ const Detail = () => {
               {count} {t("product")}:{" "}
               {(count * detail?.price)?.toLocaleString("ru-RU")}$
             </div> */}
-            <div className="mt-6">{t("price")}:</div>
-            <div className="mt-2 text-[43px] font-[500]">
-              {(count * detail?.price)?.toLocaleString("ru-RU")}
-              {findMoneyType(detail?.money_type)}
-            </div>
-            <div className="mt-2 text-[18px] text-green max-md:mb-2">
-              {detail?.price?.toLocaleString("ru-RU")}
-              {findMoneyType(detail?.money_type)} - сумма единого товар
-            </div>
+            {detail?.price !== 0 && (
+              <>
+                <div className="mt-6">{t("price")}:</div>
+                <div className="mt-2 text-[43px] font-[500]">
+                  {(count * detail?.price)?.toLocaleString("ru-RU")}
+                  {findMoneyType(detail?.money_type)}
+                </div>
+              </>
+            )}
+            {detail?.price !== 0 && (
+              <div className="mt-2 text-[18px] text-green max-md:mb-2">
+                {detail?.price?.toLocaleString("ru-RU")}
+                {findMoneyType(detail?.money_type)} - сумма единого товар
+              </div>
+            )}
             <div
               className={`button ${inBasket && "!bg-red"} w-[300px] mt-auto`}
               onClick={() => {

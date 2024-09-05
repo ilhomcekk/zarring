@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { findCategoryById } from "../../utils";
 import { CategoryType } from "../../types";
+import { Pagination } from "antd";
 
 const ProductsByCategory = () => {
   const { t } = useTranslation();
@@ -34,7 +35,7 @@ const ProductsByCategory = () => {
           ]}
         />
         <div className="flex max-lg:flex-col">
-          <div className="flex-[260px]">
+          <div className="min-w-[260px] w-[260px]">
             <div className="text-[18px] mb-2">{t("categories")}</div>
             <div className="flex flex-col gap-[2px]">
               {list?.map((item, idx) => (
@@ -67,6 +68,18 @@ const ProductsByCategory = () => {
                 <Card card={item} key={idx} />
               ))}
             </div>
+            <Pagination
+              current={Number(productsByCategory?.currentPage)}
+              total={Number(productsByCategory?.totalItems)}
+              pageSize={20}
+              showSizeChanger={false}
+              onChange={(e) => {
+                if (id) {
+                  getProductsByCategory(id, { page: e, pageSize: 20 });
+                }
+              }}
+              className="flex items-center justify-center mt-12"
+            />
           </div>
         </div>
       </div>

@@ -56,3 +56,9 @@
     background: #26644d;
   }
 }
+
+:where(.css-dev-only-do-not-override-kn7n33).ant-pagination
+  .ant-pagination-item
+  a {
+  display: unset !important;
+}

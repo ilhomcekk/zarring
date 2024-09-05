@@ -17,6 +17,9 @@ type StateAction = {
   getProductsByCategory: (id: string, params: any) => Promise<any>;
   productsByCategory: {
     data: ProductType[];
+    currentPage: string;
+    totalItems: string;
+    totalPages: number;
   };
   productsByCategoryLoading: boolean;
   basketCards: ProductType[];
@@ -50,6 +53,9 @@ const initialState: StateAction = {
   getProductsByCategory: async () => {},
   productsByCategory: {
     data: [],
+    currentPage: "1",
+    totalItems: "1",
+    totalPages: 1,
   },
   productsByCategoryLoading: false,
   basketCards: getBasketCards(),

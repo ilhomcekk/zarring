@@ -30,12 +30,24 @@ const Products = ({ className, categoryId }: Props) => {
     fetchdata(categoryId, { page: 1, pageSize: 20 });
     // getProductsByCategory(categoryId, { page: 1, pageSize: 20 });
   }, []);
+  // const fetchdata2 = async (id: string, params: any) => {
+  //   setLoading2(true);
+  //   try {
+  //     const { data } = await requests.fetchProductsByCategory(id, params);
+  //     const products = [...products2, ...data?.data];
+  //     setProducts2(products);
+  //   } catch (err) {
+  //   } finally {
+  //     setLoading2(false);
+  //   }
+  // };
+
   return (
     <div className={`${className}`}>
       <Title
         title={category?.title || ""}
         className={`${className} font-[500]`}
-        link={`/category/${category?.id}`}
+        link={products?.length > 10 ? `/category/${category?.id}` : ""}
       />
       <div className="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-x-[16px] gap-y-5">
         {loading
@@ -44,6 +56,22 @@ const Products = ({ className, categoryId }: Props) => {
               ?.slice(0, 10)
               ?.map((item, idx) => <Card card={item} key={idx} />)}
       </div>
+      {/* <div className="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-x-[16px] gap-y-5">
+        {loading2
+          ? [...Array(5)].map((_, idx) => <ProductSkeleton key={idx} />)
+          : products2?.map((item, idx) => <Card card={item} key={idx} />)}
+      </div> */}
+      {/* <Button
+        type="primary"
+        className="h-[48px] mx-auto w-full bg-bgPrimary shadow-none text-primary mt-12"
+        size="large"
+        onClick={() => {
+          setCounter((prev) => prev + 1);
+          fetchdata2(categoryId, { page: counter + 1, pageSize: 20 });
+        }}
+      >
+        Показать ещё
+      </Button> */}
     </div>
   );
 };
