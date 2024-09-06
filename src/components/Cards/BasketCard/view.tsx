@@ -8,12 +8,14 @@ import { HiTrash } from "react-icons/hi2";
 import { message } from "antd";
 import { Link } from "react-router-dom";
 import { findMoneyType } from "../../../utils";
+import { useTranslation } from "react-i18next";
 
 interface Props {
   card: ProductType;
 }
 
 const BasketCard = ({ card }: Props) => {
+  const { t } = useTranslation();
   const [qtu, setQtu] = useState(card?.count || 1);
   const { setCount, toggleBasketCard } = productsStore();
   return (
@@ -47,7 +49,7 @@ const BasketCard = ({ card }: Props) => {
           <div
             className="flex items-center gap-2 md:pt-4 cursor-pointer max-md:absolute top-[15px] right-[10px]"
             onClick={() => {
-              message.success("Успешно удалено");
+              message.success(t("successRemoveFromBasket"));
               toggleBasketCard(card);
             }}
           >
@@ -57,8 +59,8 @@ const BasketCard = ({ card }: Props) => {
             </span>
           </div>
           <div className="md:text-[50px] text-[20px] font-[500] whitespace-nowrap">
-            {card?.price?.toLocaleString("ru-RU")}
-            {findMoneyType(card?.money_type)}
+            {card?.price ? card?.price?.toLocaleString("ru-RU") : "Договорная"}
+            {card?.price ? findMoneyType(card?.money_type) : ""}
           </div>
           <Counter
             onMinus={() => {

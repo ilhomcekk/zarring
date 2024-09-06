@@ -40,5 +40,6 @@
   "categories": "Категории",
   "searchByRequest": "Поиск по запросу",
   "successAddToFavorites": "Успешно добавлено в избранного",
-  "successRemoveFromFavorites": "Успешно удалено из списка избранного"
+  "successRemoveFromFavorites": "Успешно удалено из списка избранного",
+  "negotiable": "Договорная"
 }

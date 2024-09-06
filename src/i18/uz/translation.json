@@ -40,5 +40,6 @@
   "categories": "Kategoriyalar",
   "searchByRequest": "So'rovingiz bo'yicha",
   "successAddToFavorites": "Sevimlilarga muvaffaqiyatli qo'shildi",
-  "successRemoveFromFavorites": "Sevimlilar roʻyxatidan olib tashlandi"
+  "successRemoveFromFavorites": "Sevimlilar roʻyxatidan olib tashlandi",
+  "negotiable": "Narxi kelishiladi"
 }

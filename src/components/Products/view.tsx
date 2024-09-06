@@ -4,6 +4,8 @@ import { categoryStore } from "../../store";
 import { findCategoryById } from "../../utils";
 import { CategoryType } from "../../types";
 import { requests } from "../../helpers/requests";
+import { Button } from "antd";
+import { Link } from "react-router-dom";
 
 interface Props {
   className?: string;
@@ -61,17 +63,21 @@ const Products = ({ className, categoryId }: Props) => {
           ? [...Array(5)].map((_, idx) => <ProductSkeleton key={idx} />)
           : products2?.map((item, idx) => <Card card={item} key={idx} />)}
       </div> */}
-      {/* <Button
-        type="primary"
-        className="h-[48px] mx-auto w-full bg-bgPrimary shadow-none text-primary mt-12"
-        size="large"
-        onClick={() => {
-          setCounter((prev) => prev + 1);
-          fetchdata2(categoryId, { page: counter + 1, pageSize: 20 });
-        }}
-      >
-        Показать ещё
-      </Button> */}
+      {products?.length > 10 && (
+        <Link to={`/category/${category?.id}`}>
+          <Button
+            type="primary"
+            className="h-[48px] mx-auto w-full bg-bgPrimary shadow-none text-primary mt-12"
+            size="large"
+            onClick={() => {
+              // setCounter((prev) => prev + 1);
+              // fetchdata2(categoryId, { page: counter + 1, pageSize: 20 });
+            }}
+          >
+            Показать ещё
+          </Button>
+        </Link>
+      )}
     </div>
   );
 };

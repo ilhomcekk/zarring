@@ -62,7 +62,11 @@ const Card = ({ card }: Props) => {
         </div>
         <div className="flex items-center justify-between mt-4">
           <div className="md:text-[33px] text-[24px] font-[500] dark-theme-color">
-            {card?.price ? card?.price?.toLocaleString("ru-RU") : ""}
+            {card?.price ? (
+              card?.price?.toLocaleString("ru-RU")
+            ) : (
+              <div>{t("negotiable")}</div>
+            )}
             {card?.price ? findMoneyType(card?.money_type) : null}
           </div>
           <button

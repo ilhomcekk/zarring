@@ -152,11 +152,13 @@ const Detail = () => {
                 </div>
               </>
             )}
-            {detail?.price !== 0 && (
+            {detail?.price !== 0 ? (
               <div className="mt-2 text-[18px] text-green max-md:mb-2">
                 {detail?.price?.toLocaleString("ru-RU")}
                 {findMoneyType(detail?.money_type)} - сумма единого товар
               </div>
+            ) : (
+              <div className="mt-2 text-[18px]">{t("negotiable")}</div>
             )}
             <div
               className={`button ${inBasket && "!bg-red"} w-[300px] mt-auto`}
