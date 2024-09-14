@@ -15,13 +15,13 @@ const BreadCrumb = ({ items }: Props) => {
   const navigate = useNavigate();
   const { t } = useTranslation();
   return (
-    <div className="flex items-center gap-[4px] mb-6">
+    <div className="flex flex-wrap items-center gap-[4px] mb-6">
       <div
         onClick={() => navigate(-1)}
-        className="breadcrumb flex items-center gap-1 md:hidden"
+        className="breadcrumb w-full mb-2 mt-1 flex items-center gap-1 md:hidden text-[18px] text-primary"
       >
         <img src={ASSETS.arrowBlack} className="rotate-[180deg]" alt="" />
-        {t("back")} /
+        {t("back")}
       </div>
       <Link to={APP_ROUTES.HOME} className="breadcrumb">
         {t("home")}
