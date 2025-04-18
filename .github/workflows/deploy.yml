@@ -1,0 +1,49 @@
+name: Deploy React App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Kodni klonlash
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2. Node.js versiyasini sozlash
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+
+      # 3. Bog‘liqliklarni o‘rnatish va build
+      - name: Install dependencies and build
+        run: |
+          yarn install
+          yarn build
+
+      # 4. Serverda eski fayllarni o‘chirish
+      - name: Clean remote folder
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST_NAME }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            rm -rf /var/www/zarring_site/*
+
+      # 5. Build qilingan fayllarni nusxalash
+      - name: Copy build to server
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST_NAME }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          source: "dist/*"
+          target: "/var/www/zarring_site/"
