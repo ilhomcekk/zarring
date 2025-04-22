@@ -30,20 +30,20 @@ jobs:
       - name: Clean remote folder
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.HOST_NAME }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER_NAME }}
+          key: ${{ secrets.SECRET_KEY }}
           port: 22
           script: |
             rm -rf /var/www/zarring_site/*
 
-      # 5. Build qilingan fayllarni nusxalash
+      # 5. Build qilingan fayllarni nusxalash 
       - name: Copy build to server
         uses: appleboy/scp-action@master
         with:
-          host: ${{ secrets.HOST_NAME }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER_NAME }}
+          key: ${{ secrets.SECRET_KEY }}
           port: 22
           source: "dist/*"
           target: "/var/www/zarring_site/"
