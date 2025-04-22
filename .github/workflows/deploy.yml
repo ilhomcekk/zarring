@@ -23,8 +23,8 @@ jobs:
       # 3. Bog‘liqliklarni o‘rnatish va build
       - name: Install dependencies and build
         run: |
-          yarn install
-          yarn build
+          pnpm install
+          pnpm run build
 
       # 4. Serverda eski fayllarni o‘chirish
       - name: Clean remote folder
