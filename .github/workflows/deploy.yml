@@ -20,13 +20,17 @@ jobs:
         with:
           node-version: "20"
 
-      # 3. Bog‘liqliklarni o‘rnatish va build
+      # 3. pnpm-ni global o‘rnatish
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      # 4. Bog‘liqliklarni o‘rnatish va build
       - name: Install dependencies and build
         run: |
           pnpm install
           pnpm run build
 
-      # 4. Serverda eski fayllarni o‘chirish
+      # 5. Serverda eski fayllarni o‘chirish
       - name: Clean remote folder
         uses: appleboy/ssh-action@master
         with:
@@ -37,7 +41,7 @@ jobs:
           script: |
             rm -rf /var/www/zarring_site/*
 
-      # 5. Build qilingan fayllarni nusxalash 
+      # 6. Build qilingan fayllarni nusxalash
       - name: Copy build to server
         uses: appleboy/scp-action@master
         with:
