@@ -27,6 +27,7 @@ type StateAction = {
   toggleBasketCard: (product: ProductType, count?: number) => Promise<any>;
   setCount: (product: ProductType, count?: number) => Promise<any>;
   toggleFavoriteCard: (product: ProductType) => Promise<any>;
+  removeBasketCards: () => void;
 };
 
 const getBasketCards = () =>
@@ -63,6 +64,7 @@ const initialState: StateAction = {
   toggleBasketCard: async () => {},
   setCount: async () => {},
   toggleFavoriteCard: async () => {},
+  removeBasketCards: () => {},
 };
 
 const productsStore = create<StateAction>((set) => ({
@@ -169,6 +171,10 @@ const productsStore = create<StateAction>((set) => ({
       setFavorites(newProducts);
       return { favorites: newProducts };
     });
+  },
+  removeBasketCards: () => {
+    localStorage.removeItem("basketCards");
+    set({ basketCards: [] });
   },
 }));
 

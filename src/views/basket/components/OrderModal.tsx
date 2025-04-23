@@ -2,32 +2,41 @@ import { Button, Form, Input, Modal, message } from "antd";
 import { modalsStore, orderStore, productsStore } from "../../../store";
 import { PhoneInput } from "../../../components";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 const OrderModal = () => {
   const { t } = useTranslation();
   const { modals, closeModal, openModal } = modalsStore();
   const { create, createLoading } = orderStore();
   const [form] = Form.useForm();
-  const { basketCards } = productsStore();
+  const { basketCards, removeBasketCards } = productsStore();
+  const navigate = useNavigate();
 
   const handleSubmit = () => {
-    form.validateFields().then(() => {
-      const values = form.getFieldsValue();
-      values["products"] = basketCards;
-      create(values).then((res) => {
-        if (res?.data?.id) {
-          message.success({
-            content: "Ваш заказ принят! Мы вам перезвоним",
-          });
-          closeModal("order");
-          form.resetFields();
-          openModal("orderSuccess");
-          setTimeout(() => {
-            closeModal("orderSuccess");
-          }, 5000);
-        }
+    const phone = form.getFieldValue("user_number");
+    if (!phone || phone.length < 12) {
+      message.error("Пожалуйста, введите номер телефона правильно!");
+    } else {
+      form.validateFields().then(() => {
+        const values = form.getFieldsValue();
+        values["products"] = basketCards;
+        create(values).then((res) => {
+          if (res?.data?.id) {
+            message.success({
+              content: "Ваш заказ принят! Мы вам перезвоним",
+            });
+            closeModal("order");
+            form.resetFields();
+            openModal("orderSuccess");
+            navigate("/");
+            removeBasketCards();
+            setTimeout(() => {
+              closeModal("orderSuccess");
+            }, 5000);
+          }
+        });
       });
-    });
+    }
   };
 
   const forms = [
