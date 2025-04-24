@@ -98,7 +98,7 @@ const Footer = () => {
                 {t("phone")}/{t("telegram")}:
               </div>
               <div className="text-[21px] text-white max-md:my-4">
-                +998 88 144-05-44
+                +998 91 770 92 29
               </div>
               {/* <div className="mt-auto text-white font-[700]">
                 Доставка по городу Ташкент производится в течение 2 часов с

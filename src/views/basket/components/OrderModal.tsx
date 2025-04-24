@@ -28,10 +28,10 @@ const OrderModal = () => {
             closeModal("order");
             form.resetFields();
             openModal("orderSuccess");
-            navigate("/");
             removeBasketCards();
             setTimeout(() => {
               closeModal("orderSuccess");
+              navigate("/");
             }, 5000);
           }
         });
