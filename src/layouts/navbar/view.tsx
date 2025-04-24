@@ -40,7 +40,7 @@ const Navbar = () => {
                 className="hidden md:flex items-center gap-3 font-[600] text-white"
               >
                 <PhoneOutlined />
-                +998 90 123 45 67
+                +998 91 770 92 29
               </a>
             </div>
             <LanguageSwitcher className="[&>div]:text-white [&>div]:font-[500]" />
