@@ -10,14 +10,17 @@
   &:focus {
     animation: anim 0.2s linear;
   }
-  // &.active {
-  //   box-shadow: none;
-  //   background: #26644D;
-  //   img {
-  //     filter: brightness(0) saturate(100%) invert(87%) sepia(86%) saturate(0%)
-  //       hue-rotate(150deg) brightness(103%) contrast(101%);
-  //   }
-  // }
+  &.active {
+    box-shadow: none;
+    background: #26644d;
+    img {
+      filter: brightness(0) saturate(100%) invert(87%) sepia(86%) saturate(0%)
+        hue-rotate(150deg) brightness(103%) contrast(101%);
+    }
+    svg {
+      fill: white;
+    }
+  }
 }
 
 @keyframes anim {

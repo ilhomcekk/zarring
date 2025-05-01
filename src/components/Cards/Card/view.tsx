@@ -11,6 +11,7 @@ import { message, notification } from "antd";
 import { useTranslation } from "react-i18next";
 import { AlertCard } from "..";
 import { findMoneyType } from "../../../utils";
+import { SlBasketLoaded } from "react-icons/sl";
 
 interface Props {
   card: ProductType;
@@ -87,7 +88,11 @@ const Card = ({ card }: Props) => {
               toggleBasketCard(card, 1);
             }}
           >
-            <img src={ASSETS.cartBasket} alt="" />
+            {inBasket ? (
+              <SlBasketLoaded className="min-w-[18px] w-[18px] h-[18px]" />
+            ) : (
+              <img src={ASSETS.cartBasket} alt="" />
+            )}
           </button>
         </div>
       </div>
