@@ -26,48 +26,35 @@ const Home = () => {
         title={t("whatCanOffer")}
         className="text-center md:mt-[50px] mt-[25px] max-md:mb-4"
       />
-      <div className="text-center max-md:text-justify text-[14px] leading-[22px]">
-        Ассортимент нашего ювелирного интернет-магазина Ziynat очень большой:
-        кольца, серьги, подвески, колье, браслеты, цепи и др. Украшения из
-        каталога ювелирного магазина изготовлены из золота, серебра, могут быть
-        с бриллиантами, другими драгоценными и полудрагоценными камнями. Здесь
-        вы найдете и строгие классические модели, и брутальные современные
-        варианты необычных форм с уникальным декором в виде резьбы или россыпи
-        камней. У нас можно подобрать ювелирные комплекты, в которых есть
-        несколько элементов – серьги, кольцо, колье, браслет. Такой вариант
-        актуален для тех женщин, которые не хотят тратить время и подбирать
-        разные изделия. Ведь гораздо проще и красивее будет смотреться набор,
-        элементы которого имеют единую стилистику, форму, оттенок. Магазин
-        ювелирных изделий предлагает украшения с бриллиантами разных форм, они
-        позволят выгодно продемонстрировать свой образ, добавив в него загадку и
-        некую изюминку. Магазин ювелирных украшений предлагает ювелирные
-        серебряные и золотые изделия, которые можно надеть: на деловую вечеринку
-        или каждый день. С такой целью выбирают более аккуратные и элегантные
-        модели; особое торжество (день рождения, свадьба). Для таких мероприятий
-        подойдут более изысканные и изящные украшения, которые обратят внимание
-        на образ женщины; вечерние рауты. Это мероприятия, где собираются сливки
-        общества, богатые и известные люди. Женщина, посещающая такую встречу,
-        должна сверкать, для этого используются массивные и яркие украшения.
-      </div>
       <Title
-        title={t("advantages")}
+        title={t("whatCanOffer2")}
         className="text-center md:mt-[50px] mt-[25px] max-md:mb-4"
       />
       <div className="text-center max-md:text-justify text-[14px] leading-[22px]">
-        Большой ассортимент изделий. Они отличаются формой, ценой, оттенком,
-        металлом, декором (камни, минеральные вещества и др.). Доступные цены.
-        Ювелирный магазин напрямую сотрудничает с производителями, поэтому мы
-        предлагаем более низкие цены, чем на рынке. В каталоге можно найти
-        стильные украшения от 60 000 тысяч сум. и выше. Удобная доставка. Клиент
-        может самостоятельно забрать ювелирные украшения из магазина либо
-        заказать услугу доставки. Помощь консультанта. Специалист с радостью
-        поможет выбрать подходящее украшение для конкретного торжества и ответит
-        на все вопросы. Удобная оплата. Предлагается несколько вариантов.
-        Официальная долгосрочная гарантия качества. Она предоставляется на все
-        ювелирные изделия от производителя. Удобный интерфейс, позволяющий
-        быстро найти нужный товар. Акционные предложения, скидки на товар от
-        ювелирного магазина в Ташкенте. Это поможет приобрести желаемое изделие
-        по выгодной цене.
+        Biz zargarlik sohasi uchun zarur bo’lgan yuqori sifatli qoliplar va
+        ularning stl fayllari bilan sizni doimiy yangiliklar bilan hizmat
+        ko’rsatishga tayyormiz! Biz sizga kerakli bo’ladigan Texnikalar bilan
+        to’g’ridan to’g’ri ishlab chiqaruvchilaridan va sotuvchilaridan sotib
+        olishingiz uchun yordamlashamiz va kansalting hizmatlarini ko’rsata
+        olamiz!
+      </div>
+      <div className="text-center max-md:text-justify text-[14px] leading-[22px]">
+        ZarRing jamoasi to’liqligicha o’z ishining muttaxasislaridan tashkil
+        topgan! Biz sizlar uchun qisqa vaqt ichida sifatli hizmat ko’rsata
+        olamiz.
+      </div>
+      <div className="text-center max-md:text-justify text-[14px] leading-[22px]">
+        ZarRing bilanzargarlik an’anasi va zamonaviy texnologiyalar birlashadi!
+      </div>
+      <div className="text-center max-md:text-justify text-[14px] leading-[22px]">
+        Zargarlar hamjamiyatini qo’llab quvvatlash. Biz nafaqat biznes, balki
+        zargarlik san’atini rivojlantirishga hissa qo’shadigan jamoamiz.
+        Maxsulotlarimiz va hizmatlarimiz orqali har bir zargarning ijodiy
+        salohiyatlarini oshirishga intilamiz
+      </div>
+      <div className="text-center max-md:text-justify text-[14px] leading-[22px]">
+        Biz bilan hamkorlik qilib, siz nafaqat mahsulot, balki ishonchli sherik
+        va zargarlik sohasida muvaffaqiyatcsari yo’l topishingizga ishonamiz!
       </div>
     </div>
   );
