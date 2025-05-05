@@ -1,7 +1,7 @@
 import type { MenuProps } from "antd";
 import { Dropdown, Space } from "antd";
 import { FC, useMemo, useState } from "react";
-import { RuIcon, UzIcon } from "../../utils/icons";
+import { EnIcon, RuIcon, UzIcon } from "../../utils/icons";
 import { useTranslation } from "react-i18next";
 import { changeLanguage } from "../../helpers/api";
 import i18n from "i18next";
@@ -16,7 +16,7 @@ const LanguageSwitcher: FC<Props> = ({ className }) => {
   const items: MenuProps["items"] = [
     {
       key: "ru",
-      icon: <RuIcon />,
+      icon: <EnIcon />,
       label: t("russian"),
     },
     {

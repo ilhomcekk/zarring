@@ -16,35 +16,34 @@ const About = () => {
         title={t("whatCanOffer")}
         className="text-center md:mt-[50px] mt-[25px] max-md:mb-4"
       />
-      <Title
-        title={t("whatCanOffer2")}
-        className="text-center md:mt-[50px] mt-[25px] max-md:mb-4"
-      />
       <div className="leading-[150%] text-center mt-32">
-        Biz zargarlik sohasi uchun zarur bo’lgan yuqori sifatli qoliplar va
-        ularning stl fayllari bilan sizni doimiy yangiliklar bilan hizmat
-        ko’rsatishga tayyormiz! Biz sizga kerakli bo’ladigan Texnikalar bilan
-        to’g’ridan to’g’ri ishlab chiqaruvchilaridan va sotuvchilaridan sotib
-        olishingiz uchun yordamlashamiz va kansalting hizmatlarini ko’rsata
+        ZarRing zargarlik sanoati uchun ishonchli va eng to’g’ri hamkor. Biz
+        zargarlik sohasi uchun zarur bo’lgan yuqori sifatli qoliplar va ularning
+        STL va 3DM fayllari bilan butun dunyoga doimiy yangiliklar bilan hizmat
+        ko’rsatishga tayyormiz! Biz O’zbekistondagi zargarlik sanoatiga kerakli
+        bo’ladigan Texnika va hom ashyolarini import qilishingizda to’g’ridan
+        to’g’ri ishlab chiqaruvchi va sotuvchilardan shartnoma asosida sotib
+        olishingiz uchun amaliy yordam ko’rsatamiz!
+      </div>
+      <div className="leading-[150%] text-center my-6">
+        ZarRing jamoasi to’liqligicha o’z ishining muttahasislaridan tashkil
+        topgan. Biz sizlar uchun qisqa vaqt ichida sifatli hizmat ko’rsata
         olamiz!
       </div>
       <div className="leading-[150%] text-center my-6">
-        ZarRing jamoasi to’liqligicha o’z ishining muttaxasislaridan tashkil
-        topgan! Biz sizlar uchun qisqa vaqt ichida sifatli hizmat ko’rsata
-        olamiz.
+        ZarRing bilan zargarlik ananasi va zamonaviy tehnologiyalar birlashadi.
       </div>
       <div className="leading-[150%] text-center my-6">
-        ZarRing bilanzargarlik an’anasi va zamonaviy texnologiyalar birlashadi!
+        Biz nafaqat biznes, balki zargarlik sanati va sanoatini rivojlantirishga
+        hissa qo’shadigan jamoamiz!
       </div>
       <div className="leading-[150%] text-center my-6">
-        Zargarlar hamjamiyatini qo’llab quvvatlash. Biz nafaqat biznes, balki
-        zargarlik san’atini rivojlantirishga hissa qo’shadigan jamoamiz.
-        Maxsulotlarimiz va hizmatlarimiz orqali har bir zargarning ijodiy
-        salohiyatlarini oshirishga intilamiz
+        Mahsulotlarimiz va hizmatlarimiz orqali har bir Zargarning ijodiy
+        salohiyatlarini amalga oshirishga intilamiz!
       </div>
       <div className="leading-[150%] text-center mb-32">
-        Biz bilan hamkorlik qilib, siz nafaqat mahsulot, balki ishonchli sherik
-        va zargarlik sohasida muvaffaqiyatcsari yo’l topishingizga ishonamiz!
+        Biz bilannhamkorlik qilib siz nafaqat mahsulot, balki ishonchli sherik
+        va zargarlik sohasida muvaffaqiyat sari yo’l topishingizga ishonamiz!!!
       </div>
     </div>
   );

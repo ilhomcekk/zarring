@@ -74,13 +74,13 @@ const Footer = () => {
                 {/* <img src={ASSETS.arrowWhite} alt="" /> */}
                 {t("aboutUs")}
               </Link>
-              <Link
+              {/* <Link
                 to={APP_ROUTES.POLITICS}
                 className="footer-link hover:text-[#4B94FF] font-[600]"
               >
-                {/* <img src={ASSETS.arrowWhite} alt="" /> */}
+                <img src={ASSETS.arrowWhite} alt="" />
                 {t("politics")}
-              </Link>
+              </Link> */}
               {/* <Link to={""} className="footer-link">
                 <img src={ASSETS.arrowWhite} alt="" />
                 Карта сайта

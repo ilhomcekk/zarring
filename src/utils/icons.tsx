@@ -148,6 +148,36 @@ export const UzIcon = () => {
   );
 };
 
+export const EnIcon = () => {
+  return (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 60 30"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <clipPath id="t">
+        <path d="M0,0 v30 h60 v-30 z" />
+      </clipPath>
+      <clipPath id="s">
+        <path d="M30,15 h30 v15 z" />
+      </clipPath>
+      <g clipPath="url(#t)">
+        <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
+        <path d="M0,0 l60,30 M60,0 l-60,30" stroke="#fff" strokeWidth="6" />
+        <path
+          d="M0,0 l60,30 M60,0 l-60,30"
+          stroke="#C8102E"
+          strokeWidth="4"
+          clipPath="url(#s)"
+        />
+        <path d="M30,0 v30 M0,15 h60" stroke="#fff" strokeWidth="10" />
+        <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" strokeWidth="6" />
+      </g>
+    </svg>
+  );
+};
+
 export const HomeIcon = (props: SVGProps) => {
   return (
     <svg
