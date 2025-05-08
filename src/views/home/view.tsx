@@ -27,33 +27,16 @@ const Home = () => {
         className="text-center md:mt-[50px] mt-[25px] max-md:mb-4"
       />
       <div className="text-center max-md:text-justify text-[14px] leading-[22px]">
-        ZarRing zargarlik sanoati uchun ishonchli va eng to’g’ri hamkor. Biz
-        zargarlik sohasi uchun zarur bo’lgan yuqori sifatli qoliplar va ularning
-        STL va 3DM fayllari bilan butun dunyoga doimiy yangiliklar bilan hizmat
-        ko’rsatishga tayyormiz! Biz O’zbekistondagi zargarlik sanoatiga kerakli
-        bo’ladigan Texnika va hom ashyolarini import qilishingizda to’g’ridan
-        to’g’ri ishlab chiqaruvchi va sotuvchilardan shartnoma asosida sotib
-        olishingiz uchun amaliy yordam ko’rsatamiz!
+        {t("aboutUs1")}
       </div>
       <div className="text-center max-md:text-justify text-[14px] leading-[22px]">
-        ZarRing jamoasi to’liqligicha o’z ishining muttahasislaridan tashkil
-        topgan. Biz sizlar uchun qisqa vaqt ichida sifatli hizmat ko’rsata
-        olamiz!
+        {t("aboutUs2")}
       </div>
       <div className="text-center max-md:text-justify text-[14px] leading-[22px]">
-        ZarRing bilan zargarlik ananasi va zamonaviy tehnologiyalar birlashadi.
+        {t("aboutUs3")}
       </div>
       <div className="text-center max-md:text-justify text-[14px] leading-[22px]">
-        Biz nafaqat biznes, balki zargarlik sanati va sanoatini rivojlantirishga
-        hissa qo’shadigan jamoamiz!
-      </div>
-      <div className="text-center max-md:text-justify text-[14px] leading-[22px]">
-        Mahsulotlarimiz va hizmatlarimiz orqali har bir Zargarning ijodiy
-        salohiyatlarini amalga oshirishga intilamiz!
-      </div>
-      <div className="text-center max-md:text-justify text-[14px] leading-[22px]">
-        Biz bilannhamkorlik qilib siz nafaqat mahsulot, balki ishonchli sherik
-        va zargarlik sohasida muvaffaqiyat sari yo’l topishingizga ishonamiz!!!
+        {t("aboutUs4")}
       </div>
     </div>
   );
