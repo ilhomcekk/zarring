@@ -1,7 +1,7 @@
 import type { MenuProps } from "antd";
 import { Dropdown, Space } from "antd";
 import { FC, useMemo, useState } from "react";
-import { EnIcon, RuIcon, UzIcon } from "../../utils/icons";
+import { EnIcon, UzIcon } from "../../utils/icons";
 import { useTranslation } from "react-i18next";
 import { changeLanguage } from "../../helpers/api";
 import i18n from "i18next";
