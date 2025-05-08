@@ -37,11 +37,13 @@ const BasketCard = ({ card }: Props) => {
           {card?.characteristic?.length > 0 ? (
             <div className="flex flex-col gap-2 max-md:hidden">
               <div className="text-[#1F2026]">Кратко о товаре:</div>
-              {card?.characteristic?.map((item, idx) => (
-                <div className="text-[#1F2026]" key={idx}>
-                  {item.label}: {item.value}
-                </div>
-              ))}
+              {card?.characteristic?.map((item, idx) =>
+                item ? (
+                  <div className="text-[#1F2026]" key={idx}>
+                    {item?.label}: {item?.value}
+                  </div>
+                ) : null
+              )}
             </div>
           ) : null}
         </div>

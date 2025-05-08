@@ -25,7 +25,7 @@ const Card = ({ card }: Props) => {
   const inFavorites = favorites?.find((item) => item?.id === card?.id);
   return (
     <Link
-      to={`/product/${card.id}`}
+      to={`/product/${card?.id}`}
       className={`group relative shadow-card md:hover:shadow-sm duration-200
        rounded-[8px] bg-white`}
     >
