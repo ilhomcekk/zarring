@@ -69,27 +69,24 @@ const Banner = () => {
       ) : (
         list?.map((item, idx) => (
           <SwiperSlide key={idx} className="cursor-pointer">
-            {item?.dataValues?.img?.toLowerCase()?.endsWith(".mp4") ? (
+            {item?.img?.toLowerCase()?.endsWith(".mp4") ? (
               <video
                 controls
                 onPlay={handleVideoPlay}
                 onPause={handleVideoPause}
               >
-                <source
-                  src={BASE_URL + item?.dataValues?.img}
-                  type="video/mp4"
-                />
+                <source src={BASE_URL + item?.img} type="video/mp4" />
               </video>
             ) : (
               <div className="block md:h-[420px] h-[185px]">
                 <Image
                   className="!rounded-[12px] !h-full object-cover"
                   rootClassName="h-full w-full"
-                  src={BASE_URL + item?.dataValues?.img}
+                  src={BASE_URL + item?.img}
                 >
                   <LazyLoadImage
                     effect="opacity"
-                    src={BASE_URL + item?.dataValues?.img}
+                    src={BASE_URL + item?.img}
                     alt=""
                     className="h-full object-cover w-full bg-[#eee] md:rounded-[0] rounded-[12px]"
                     wrapperClassName="w-full h-full"
