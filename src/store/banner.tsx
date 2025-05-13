@@ -3,7 +3,7 @@ import { requests } from "../helpers/requests";
 
 type StateAction = {
   getList: () => Promise<any>;
-  list: { dataValues: { name: string | null; img: string | null } }[];
+  list: { name: string | null; img: string | null }[];
   listLoading: boolean;
 };
 
