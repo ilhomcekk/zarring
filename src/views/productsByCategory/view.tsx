@@ -68,18 +68,20 @@ const ProductsByCategory = () => {
                 <Card card={item} key={idx} />
               ))}
             </div>
-            <Pagination
-              current={Number(productsByCategory?.currentPage)}
-              total={Number(productsByCategory?.totalItems)}
-              pageSize={20}
-              showSizeChanger={false}
-              onChange={(e) => {
-                if (id) {
-                  getProductsByCategory(id, { page: e, pageSize: 20 });
-                }
-              }}
-              className="flex items-center justify-center mt-12"
-            />
+            {Number(productsByCategory?.currentPage) > 0 ? (
+              <Pagination
+                current={Number(productsByCategory?.currentPage)}
+                total={Number(productsByCategory?.totalItems)}
+                pageSize={20}
+                showSizeChanger={false}
+                onChange={(e) => {
+                  if (id) {
+                    getProductsByCategory(id, { page: e, pageSize: 20 });
+                  }
+                }}
+                className="flex items-center justify-center mt-12"
+              />
+            ) : null}
           </div>
         </div>
       </div>

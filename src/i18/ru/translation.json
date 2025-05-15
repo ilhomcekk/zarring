@@ -47,5 +47,6 @@
   "searchByRequest": "Results by search",
   "successAddToFavorites": "Successfully added to Favourites",
   "successRemoveFromFavorites": "Removed from Favourites",
-  "negotiable": "Negotiable"
+  "negotiable": "Negotiable",
+  "sizes": "Sizes"
 }

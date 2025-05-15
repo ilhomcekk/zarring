@@ -21,7 +21,7 @@ const Banner = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
       // @ts-ignore
       swiperRef.current.swiper.autoplay.stop();
-    }
+    } 
   };
 
   const handleVideoPause = () => {

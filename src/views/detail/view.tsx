@@ -110,19 +110,34 @@ const Detail = () => {
               </div>
             </div>
             <div className="text-[22px] mt-4">{`${
-              i18n.language === "uz" ? detail?.title_ru : detail?.title_uz
+              i18n.language === "uz" ? detail?.title_uz : detail?.title_ru
             }`}</div>
             {/* <div className="mt-6 flex items-center gap-2 cursor-pointer">
               Доставка: <img src={ASSETS.info} alt="" />
             </div> */}
+            <div className="mt-6 mb-2">{t("sizes")}</div>
+            <div className="flex flex-wrap gap-2">
+              {[...Array(5)].map((_, idx) => (
+                <div
+                  key={idx}
+                  className={`min-w-[32px] text-center cursor-pointer rounded-lg border ${
+                    idx === 2 ? "border-[#202020]" : "border-[#dadada]"
+                  } ${idx === 2 ? "text-[#202020]" : "text-[#dadada]"} p-2`}
+                >
+                  {idx + 5}
+                </div>
+              ))}
+            </div>
             {detail?.characteristic?.length > 0 ? (
               <div className="flex flex-col gap-3 mt-6 pt-3 border-t border-border">
                 <div>Кратко о товаре:</div>
-                {detail?.characteristic?.map((item, idx) => (
-                  <div key={idx}>
-                    {item.label}: {item.value}
-                  </div>
-                ))}
+                {detail?.characteristic?.map((item, idx) =>
+                  item?.label ? (
+                    <div key={idx}>
+                      {item.label}: {item.value}
+                    </div>
+                  ) : null
+                )}
               </div>
             ) : null}
             <div className="mt-6">{t("amount")}:</div>
