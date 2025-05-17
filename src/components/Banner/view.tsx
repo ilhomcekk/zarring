@@ -11,6 +11,7 @@ import { Image, Skeleton } from "antd";
 import { bannerStore } from "../../store";
 import { useEffect, useRef } from "react";
 import { BASE_URL } from "../../config";
+import { APP_ROUTES } from "../../router";
 
 const Banner = () => {
   const { getList, list, listLoading } = bannerStore();
@@ -21,7 +22,7 @@ const Banner = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
       // @ts-ignore
       swiperRef.current.swiper.autoplay.stop();
-    } 
+    }
   };
 
   const handleVideoPause = () => {
@@ -78,7 +79,10 @@ const Banner = () => {
                 <source src={BASE_URL + item?.img} type="video/mp4" />
               </video>
             ) : (
-              <div className="block md:h-[420px] h-[185px]">
+              <a
+                className="block md:h-[420px] h-[185px]"
+                href={item?.link || APP_ROUTES.HOME}
+              >
                 <Image
                   className="!rounded-[12px] !h-full object-cover"
                   rootClassName="h-full w-full"
@@ -92,7 +96,7 @@ const Banner = () => {
                     wrapperClassName="w-full h-full"
                   />
                 </Image>
-              </div>
+              </a>
             )}
           </SwiperSlide>
         ))

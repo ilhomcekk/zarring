@@ -7,9 +7,12 @@ import { ProductType } from "../../../types";
 import { BASE_URL } from "../../../config";
 import { productsStore } from "../../../store";
 import { HeartFilled } from "@ant-design/icons";
-import { message, notification } from "antd";
+import {
+  message,
+  // notification
+} from "antd";
 import { useTranslation } from "react-i18next";
-import { AlertCard } from "..";
+// import { AlertCard } from "..";
 import { findMoneyType } from "../../../utils";
 import { SlBasketLoaded } from "react-icons/sl";
 
@@ -19,8 +22,12 @@ interface Props {
 
 const Card = ({ card }: Props) => {
   const { t } = useTranslation();
-  const { toggleBasketCard, toggleFavoriteCard, favorites, basketCards } =
-    productsStore();
+  const {
+    //  toggleBasketCard,
+    toggleFavoriteCard,
+    favorites,
+    basketCards,
+  } = productsStore();
   const inBasket = basketCards?.find((item) => item?.id === card?.id);
   const inFavorites = favorites?.find((item) => item?.id === card?.id);
   return (
@@ -71,21 +78,20 @@ const Card = ({ card }: Props) => {
             {card?.price ? findMoneyType(card?.money_type) : null}
           </div>
           <button
-            className={`cart-basket ${inBasket && "active"}`}
-            onClick={(e) => {
-              e.preventDefault();
-              if (inBasket) {
-                message.info({ content: t("successRemoveFromBasket") });
-              } else {
-                // message.success({ content: t("successAddToBasket") });
-                notification.open({
-                  message: <AlertCard card={card} />,
-                  placement: "top",
-                  showProgress: true,
-                  className: "alert-card",
-                });
-              }
-              toggleBasketCard(card, 1);
+            className={`cart-basket ${inBasket && "active"} opacity-0`}
+            onClick={(_) => {
+              // e.preventDefault();
+              // if (inBasket) {
+              //   message.info({ content: t("successRemoveFromBasket") });
+              // } else {
+              //   notification.open({
+              //     message: <AlertCard card={card} />,
+              //     placement: "top",
+              //     showProgress: true,
+              //     className: "alert-card",
+              //   });
+              // }
+              // toggleBasketCard(card, 1);
             }}
           >
             {inBasket ? (
