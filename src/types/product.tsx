@@ -14,5 +14,7 @@ export type ProductType = {
     label: string;
     value: string;
   }[];
+  size: string[];
+  selected_size?: string;
   gallery: string[];
 };

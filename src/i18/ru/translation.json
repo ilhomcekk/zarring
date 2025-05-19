@@ -48,5 +48,6 @@
   "successAddToFavorites": "Successfully added to Favourites",
   "successRemoveFromFavorites": "Removed from Favourites",
   "negotiable": "Negotiable",
-  "sizes": "Sizes"
+  "sizes": "Sizes",
+  "size": "Size"
 }

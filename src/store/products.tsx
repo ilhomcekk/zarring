@@ -85,8 +85,17 @@ const productsStore = create<StateAction>((set) => ({
     set({ productsByIdsLoading: true });
     try {
       const { data } = await requests.fetchProductsByIds(params);
-      set({ list: data?.data });
-      setBasketCards(data?.data);
+      const products = data?.data?.map((item: ProductType) => {
+        const prevProduct = params?.productIds?.find(
+          (prev: ProductType) => prev?.id === item?.id
+        );
+        return {
+          ...item,
+          selected_size: prevProduct?.selected_size || null,
+        };
+      });
+      set({ list: products });
+      setBasketCards(products);
       return data;
     } catch (err) {
       return err;

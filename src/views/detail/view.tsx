@@ -14,6 +14,7 @@ import { useTranslation } from "react-i18next";
 import { AlertCard } from "../../components/Cards";
 import i18n from "../../../i18n";
 import { findMoneyType } from "../../utils";
+import { ProductType } from "../../types";
 
 const Detail = () => {
   const { t } = useTranslation();
@@ -28,12 +29,17 @@ const Detail = () => {
     toggleBasketCard,
     basketCards,
   } = productsStore();
+  const [detailProduct, setDetailProduct] = useState<ProductType>(detail);
   const inBasket = basketCards?.find((item) => item?.id === detail?.id);
+
   useEffect(() => {
     if (id) {
       getDetail(id);
     }
   }, [id]);
+  useEffect(() => {
+    setDetailProduct({ ...detail, selected_size: "" });
+  }, [detail]);
   return (
     <>
       <div className="wrapper">
@@ -115,19 +121,38 @@ const Detail = () => {
             {/* <div className="mt-6 flex items-center gap-2 cursor-pointer">
               Доставка: <img src={ASSETS.info} alt="" />
             </div> */}
-            <div className="mt-6 mb-2">{t("sizes")}</div>
-            <div className="flex flex-wrap gap-2">
-              {[...Array(5)].map((_, idx) => (
-                <div
-                  key={idx}
-                  className={`min-w-[32px] text-center cursor-pointer rounded-lg border ${
-                    idx === 2 ? "border-[#202020]" : "border-[#dadada]"
-                  } ${idx === 2 ? "text-[#202020]" : "text-[#dadada]"} p-2`}
-                >
-                  {idx + 5}
+            {detail?.size?.length > 0 ? (
+              <>
+                <div className="mt-6 mb-2">{t("sizes")}</div>
+                <div className="flex flex-wrap gap-2">
+                  {detail?.size?.map((item, idx) => (
+                    <div
+                      key={idx}
+                      onClick={() => {
+                        if (detailProduct.selected_size === item) {
+                          setDetailProduct((prev) => ({
+                            ...prev,
+                            selected_size: "",
+                          }));
+                        } else {
+                          setDetailProduct((prev) => ({
+                            ...prev,
+                            selected_size: item,
+                          }));
+                        }
+                      }}
+                      className={`min-w-[32px] text-center cursor-pointer rounded-lg border ${
+                        item === detailProduct?.selected_size
+                          ? "text-[#202020] border-[#202020]"
+                          : "text-[#dadada] border-[#dadada]"
+                      } p-2`}
+                    >
+                      {item}
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </>
+            ) : null}
             {detail?.characteristic?.length > 0 ? (
               <div className="flex flex-col gap-3 mt-6 pt-3 border-t border-border">
                 <div>Кратко о товаре:</div>
@@ -188,7 +213,7 @@ const Detail = () => {
                     className: "alert-card",
                   });
                 }
-                toggleBasketCard(detail, count);
+                toggleBasketCard(detailProduct, count);
               }}
             >
               {basketCards?.find((item) => item?.id === detail?.id)

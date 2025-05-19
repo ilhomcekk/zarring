@@ -47,5 +47,6 @@
   "successAddToFavorites": "Sevimlilarga muvaffaqiyatli qo'shildi",
   "successRemoveFromFavorites": "Sevimlilar roʻyxatidan olib tashlandi",
   "negotiable": "Narxi kelishiladi",
-  "sizes": "Razmerlar"
+  "sizes": "Razmerlar",
+  "size": "Razmer"
 }

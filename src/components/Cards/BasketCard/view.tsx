@@ -34,6 +34,14 @@ const BasketCard = ({ card }: Props) => {
           <div className="md:text-[22px] text-[14px] mb-2 max-md:w-[80%]">
             {card?.title}
           </div>
+          {card?.selected_size ? (
+            <div className="flex items-center gap-2">
+              {t("size")}:
+              <div className="min-w-[32px] text-[14px] max-w-max px-2 py-[5px] text-center cursor-pointer rounded-lg border text-[#202020] border-[#202020]">
+                {card?.selected_size}
+              </div>
+            </div>
+          ) : null}
           {card?.characteristic?.length > 0 ? (
             <div className="flex flex-col gap-2 max-md:hidden">
               <div className="text-[#1F2026]">Кратко о товаре:</div>

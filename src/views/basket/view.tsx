@@ -16,6 +16,7 @@ const Basket = () => {
   let products = basketCards?.map((item) => ({
     count: item?.count,
     id: item?.id,
+    selected_size: item?.selected_size,
   }));
 
   useEffect(() => {
