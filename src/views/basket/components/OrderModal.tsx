@@ -67,7 +67,7 @@ const OrderModal = () => {
       open={modals?.order}
       footer={null}
       onCancel={() => closeModal("order")}
-      onClose={() => closeModal("order")}
+      // onClose={() => closeModal("order")}
       title={`${t("design")} ${t("order")}`}
       centered
     >

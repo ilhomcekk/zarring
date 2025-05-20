@@ -10,7 +10,7 @@ const OrderSuccessModal = () => {
       open={modals?.orderSuccess}
       footer={null}
       onCancel={() => closeModal("orderSuccess")}
-      onClose={() => closeModal("orderSuccess")}
+      // onClose={() => closeModal("orderSuccess")}
       title="Ваш заказ принят"
       centered
     >
